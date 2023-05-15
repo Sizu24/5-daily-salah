@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <?php include('./partials/header.php') ?>
     <main class="main">
       <?php include('./partials/hero.php'); ?>
     </main>
-    <script src="./scripts/index.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

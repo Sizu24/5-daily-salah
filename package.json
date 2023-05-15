@@ -1,0 +1,26 @@
+{
+  "name": "salah",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docker run -p 3000:80 -v /salah:/var/www/html -v /src/styles/:/var/www/html/css -it <image-name>",
+    "watch": "sass --watch src/scripts/ css/"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "sass": "^1.43.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sizu24/salah.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sizu24/salah/issues"
+  },
+  "homepage": "https://github.com/Sizu24/salah#readme"
+}
