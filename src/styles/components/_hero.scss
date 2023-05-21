@@ -1,13 +1,22 @@
 .hero {
-  position: relative;
-  height: 100vh;
-  width: 100vh;
-  background-color: $primary;
+  background-color: $navy-blue;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: rem(293px);
+    width: 100%;
+    background-image: url('../images/curves.svg');
+    background-repeat: no-repeat;
+  }
 }
 
 .hero__image {
-  width: 100%;
-  height: 100%;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   background: url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: bottom;
@@ -18,27 +27,37 @@
 .hero-content {
   position: absolute;
   top: 25%;
-  left: 250px;
+  left: 80px;
+  max-width: rem(380px);
   z-index: 1;
 }
 
 .hero-content__title {
-  font-family: Inter;
+  font-family: $ff-main;
   font-size: 4rem;
-  color: $sand;
+  color: $beige;
 }
 
 .hero-content__body {
+  font-family: $ff-secondary;
   font-size: 1.25rem;
-  color: $light-blue;
+  color: $sky-blue;
 }
 
-.hero-content__link {
+.hero-content__cta {
   display: inline-block;
-  padding: 10px 25px;
-  background-color: $sand;
-  color: $secondary;
-  border: none;
+  padding: rem(14px 67px);
+  background-color: $beige;
+  font-size: rem(24px);
+  color: $teal-blue;
+  border: 2px solid $beige;
   text-decoration: none;
-  border-radius: 49px;
+  border-radius: rem(50px);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: $beige;
+    background-color: $teal-blue;
+  }
+
 }

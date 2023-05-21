@@ -1,0 +1,37 @@
+.section-content {
+  display: flex;
+  flex-direction: column;
+
+  @include size($sm) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section__title {
+  margin-bottom: rem(20px);
+  font-family: $ff-main;
+  font-size: rem(48px);
+  color: $teal-blue;
+}
+
+.section__subhead {
+  font-family: $ff-main;
+  font-size: rem(20px);
+  font-weight: 100;
+  color: $teal-blue;
+}
+
+.section-media {
+
+}
+
+.section-media__image {
+  max-width: rem(600px);
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+.wudu {
+  position: relative;
+  padding: rem(200px 20px);
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: -57px;
+    left: 0;
+    width: rem(1982px);
+    height: rem(80px);
+    background-image: url('../images/wudu-curve.svg');
+    background-repeat: no-repeat;
+  }
+
+  @include size($sm) {
+    padding: rem(200px 80px);
+  }
+}

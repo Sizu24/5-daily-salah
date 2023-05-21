@@ -1,0 +1,49 @@
+.steps {
+  display: flex;
+  flex-direction: row;
+  gap: rem(50px);
+}
+
+.steps__list {
+  padding: 0;
+  list-style: none;
+}
+
+.steps__list-item {
+  margin-bottom: rem(10px);
+
+  button {
+    padding: rem(10px 80px);
+    width: 100%;
+    font-family: $ff-main;
+    color: $midnight-blue;
+    background-color: transparent;
+    text-align: center;
+    border: 2px solid $midnight-blue;
+    border-radius: rem(50px);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: $white;
+      background-color: $midnight-blue;
+    }
+  }
+}
+
+.steps__description {
+
+}
+
+.steps__description-title {
+  font-family: $ff-main;
+}
+
+.steps__description-body {
+
+  li {
+    margin: rem(20px 0);
+    font-family: $ff-secondary;
+    font-size: rem(16px);
+  }
+}

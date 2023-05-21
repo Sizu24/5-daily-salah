@@ -1,8 +1,20 @@
-$blue: #192E61;
-$primary: #162B57;
-$secondary: #2B6E93;
-$light-blue: #4097B2;
-$accent: #398BAB;
-$sand: #F3E1CE;
-$light: #ffffff;
+// Colors
+$midnight-blue: #192E61;
+$navy-blue: #162B57;
+$teal-blue: #2B6E93;
+$sky-blue: #4097B2;
+$ocean-blue: #398BAB;
+$beige: #F3E1CE;
+$white: #FFFFFF;
 
+// Media Query Sizes
+$sm: 375px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1440px;
+
+
+// Fonts
+$ff-main: 'Inter', sans-serif;
+$ff-secondary: 'Inria Serif', serif;

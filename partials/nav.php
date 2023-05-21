@@ -1,8 +1,8 @@
 <nav class="nav">
   <ul class="nav-list">
-    <li class="nav-list__item">Home</li>
-    <li class="nav-list__item">Wudu</li>
-    <li class="nav-list__item">Salah</li>
-    <li class="nav-list__item">Info</li>
+    <li class="nav-list__item"><a href="#home">Home</a></li>
+    <li class="nav-list__item"><a href="#wudu">Wudu</a></li>
+    <li class="nav-list__item"><a href="#salah">Salah</a></li>
+    <li class="nav-list__item"><a href="#info">Info</a></li>
   </ul>
 </nav>
