@@ -1,10 +1,9 @@
 .nav {
-  position: fixed;
   display: flex;
   justify-content: flex-end;
   width: 100vw;
   z-index: 1;
-  background-color: rgba($midnight-blue, 0.25);
+  background-color: rgba($midnight-blue, 0);
 }
 
 .nav-list {
@@ -17,7 +16,7 @@
 }
 
 .nav-list__item {
-  padding: 25px;
+  padding: rem(25px);
   color: $beige;
 
   a {

@@ -26,27 +26,28 @@
 
 .hero-content {
   position: absolute;
-  top: 25%;
-  left: 80px;
-  max-width: rem(380px);
+  top: 20%;
+  left: rem(40px);
   z-index: 1;
 }
 
 .hero-content__title {
+  margin-bottom: 0;
   font-family: $ff-main;
-  font-size: 4rem;
+  font-size: rem(144px);
   color: $beige;
 }
 
 .hero-content__body {
+  margin: rem(0 0 40px 0);
   font-family: $ff-secondary;
-  font-size: 1.25rem;
+  font-size: rem(20px);
   color: $sky-blue;
 }
 
 .hero-content__cta {
   display: inline-block;
-  padding: rem(14px 67px);
+  padding: rem(10px 40px);
   background-color: $beige;
   font-size: rem(24px);
   color: $teal-blue;

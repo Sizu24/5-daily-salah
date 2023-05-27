@@ -8,18 +8,19 @@
 
   $images = [];
   foreach ($filtered as $imageName) {
-    array_push($images, $gallery . $imageName);
+    array_push($images, $path . $imageName);
   }
 
 ?>
 
 <div class="wudu" id="#wudu">
+  <div class="section">
   <h2 class="section__title">Making Wudu</h2>
   <h3 class="section__subhead">
     The first steps to prepare for prayer.
   </h3>
   <div class="section-content">
-    <div class="section">
+    <div class="wudu-text">
       <div class="steps">
         <ul class="steps__list">
           <li class="steps__list-item"><button selected>Intention</button></li>
@@ -46,11 +47,9 @@
          </div>
       </div>
     </div>
-
-    <div class="section">
-      <div class="section-media">
-        <img src="./images/wudu-image1.jpg" alt="" class="section-media__image">
-      </div>
+    <div class="section-media">
+      <img src="./images/wudu-image1.jpg" alt="" class="section-media__image">
     </div>
+  </div>
   </div>
 </div>

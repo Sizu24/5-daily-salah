@@ -40,10 +40,22 @@
 }
 
 .steps__description-body {
+  position: relative;
+  width: 200px;
+  list-style: none;
+}
 
-  li {
-    margin: rem(20px 0);
-    font-family: $ff-secondary;
-    font-size: rem(16px);
-  }
+.steps__description-item {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: rem(20px 0);
+  font-family: $ff-secondary;
+  font-size: rem(16px);
+}
+
+.steps__description-item.show {
+  opacity: 1;
+  visibility: visible;
 }

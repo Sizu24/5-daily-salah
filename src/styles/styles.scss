@@ -1,10 +1,12 @@
 @import "variables";
 @import "mixins";
+@import "sanitize";
 @import "globals";
 
 @import "components/header";
 @import "components/nav";
 @import "components/hero";
+@import "components/basics";
 @import "components/salah";
 @import "components/section";
 @import "components/steps";

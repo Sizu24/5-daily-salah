@@ -1,7 +1,17 @@
 .header {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba($midnight-blue, 0.50);
   width: 100vw;
+  z-index: 1;
+  transition: all .2s ease-in-out;
+}
+
+
+.header.hide {
+  opacity: 0;
+  visibility: hidden;
 }
