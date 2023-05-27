@@ -25,7 +25,7 @@
 }
 
 .section-categories__list-button {
-  padding: rem(50px 40px);
+  padding: rem(50px 60px);
   width: 100%;
   font-family: $ff-main;
   color: $midnight-blue;
@@ -64,8 +64,13 @@
 .section__title {
   margin-bottom: rem(20px);
   font-family: $ff-main;
-  font-size: rem(48px);
+  font-weight: $fw-black;
+  font-size: rem(112px);
   color: $teal-blue;
+}
+
+.section__title--dark {
+  color: $white;
 }
 
 .section__subhead {
@@ -73,6 +78,10 @@
   font-size: rem(20px);
   font-weight: 100;
   color: $teal-blue;
+}
+
+.section__subhead--dark {
+  color: $white;
 }
 
 .section-text {
@@ -97,7 +106,14 @@
 }
 
 .section-text__body {
-  font-family: $ff-secondary;
+  font-family: $ff-main;
+  font-weight: $fw-light;
+}
+
+.section-text__link {
+  color: $teal-blue;
+  font-weight: $fw-black;
+  cursor: pointer;
 }
 
 .section-media {

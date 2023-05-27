@@ -61,30 +61,30 @@
       <div class="section-text js-basics-text" data-category="prayers">
       <h3 class="section-text__title">The 5 prayers</h3>
         <div class="steps">
-          <ul class="steps__list">
-            <li class="steps__list-item"><button class="steps__list-button js-basics-choice">Fajr</button></li>
-            <li class="steps__list-item"><button class="steps__list-button js-basics-choice">Dhur</button></li>
-            <li class="steps__list-item"><button class="steps__list-button js-basics-choice">Asr</button></li>
-            <li class="steps__list-item"><button class="steps__list-button js-basics-choice">Maghrib</button></li>
-            <li class="steps__list-item"><button class="steps__list-button js-basics-choice">Isha</button></li>
+          <ul class="steps-list">
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Fajr</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Dhur</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Asr</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Maghrib</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Isha</button></li>
           </ul>
 
-          <div class="steps__description">
-            <h3 class="steps__description-title js-steps-title">Fajr</h3>
-            <ul class="steps__description-body">
-              <li class="steps__description-item js-steps show" data-prayer="Fajr">
+          <div class="steps__description show">
+            <h3 class="steps-description__title js-steps-title">Fajr</h3>
+            <ul class="steps-description__body">
+              <li class="steps-description__item js-steps show" data-prayer="Fajr">
                 This is the morning prayer, which has <strong>TWO</strong> rakats.
               </li>
-              <li class="steps__description-item js-steps" data-prayer="Dhur">
+              <li class="steps-description__item js-steps" data-prayer="Dhur">
                 This is the afternoon prayer, which has <strong>FOUR</strong> rakats.
               </li>
-              <li class="steps__description-item js-steps" data-prayer="Asr">
+              <li class="steps-description__item js-steps" data-prayer="Asr">
                 This is the mid-day prayer, which has <strong>FOUR</strong> rakats.
               </li>
-              <li class="steps__description-item js-steps" data-prayer="Maghrib">
+              <li class="steps-description__item js-steps" data-prayer="Maghrib">
                 This is the evening prayer, which has <strong>THREE</strong> rakats.
               </li>
-              <li class="steps__description-item js-steps" data-prayer="Isha">
+              <li class="steps-description__item js-steps" data-prayer="Isha">
                 This is the night prayer, which has <strong>FOUR</strong> rakats.
               </li>
             </ul>

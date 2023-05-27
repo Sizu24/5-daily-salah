@@ -1,6 +1,7 @@
 fixedHeader();
 basicsCategories();
 basicsFivePrayers();
+wuduSteps();
 
 function fixedHeader() {
   const header = document.querySelector('.js-header');
@@ -71,6 +72,36 @@ function basicsFivePrayers() {
           step.classList.remove('show');
         }
       });
+    });
+  });
+}
+
+function wuduSteps() {
+  const stepsButtons = document.querySelectorAll('.js-wudu-steps');
+  const wuduDescription = document.querySelectorAll('.js-wudu-description');
+
+  function removeSelected() {
+    stepsButtons.forEach((button) => {
+      button.classList.remove('selected');
+    });
+  }
+
+  function showDescription(step) {
+    wuduDescription.forEach((description) => {
+      if (description.dataset.category === step.dataset.category) {
+        description.classList.add('show');
+      } else {
+        description.classList.remove('show');
+      }
+    });
+  }
+
+  stepsButtons.forEach((step) => {
+    step.addEventListener('click', () => {
+      removeSelected();
+      step.classList.add('selected');
+
+      showDescription(step);
     });
   });
 }

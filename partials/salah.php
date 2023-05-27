@@ -7,21 +7,21 @@
     <div class="section-content">
       <div class="salah-text">
         <div class="steps">
-          <ul class="steps__list">
-            <li class="steps__list-item"><button selected>Intention</button></li>
-            <li class="steps__list-item"><button>Takbir (standing)</button></li>
-            <li class="steps__list-item"><button>Qiyam (standing)</button></li>
-            <li class="steps__list-item"><button>Ruku (bowing)</button></li>
-            <li class="steps__list-item"><button>Stand</button></li>
-            <li class="steps__list-item"><button>Sujud (prostration)</button></li>
-            <li class="steps__list-item"><button>Quood (sitting)</button></li>
-            <li class="steps__list-item"><button>Ruku (bowing)</button></li>
-            <li class="steps__list-item"><button>Qiyam (standing)</button></li>
+          <ul class="steps-list">
+            <li class="steps-list__item"><button selected>Intention</button></li>
+            <li class="steps-list__item"><button>Takbir (standing)</button></li>
+            <li class="steps-list__item"><button>Qiyam (standing)</button></li>
+            <li class="steps-list__item"><button>Ruku (bowing)</button></li>
+            <li class="steps-list__item"><button>Stand</button></li>
+            <li class="steps-list__item"><button>Sujud (prostration)</button></li>
+            <li class="steps-list__item"><button>Quood (sitting)</button></li>
+            <li class="steps-list__item"><button>Ruku (bowing)</button></li>
+            <li class="steps-list__item"><button>Qiyam (standing)</button></li>
           </ul>
 
-          <div class="steps__description">
-            <h3 class="steps__description-title">Washing Hands</h3>
-            <ol class="steps__description-body">
+          <div class="steps-description show">
+            <h3 class="steps-description__title">Washing Hands</h3>
+            <ol class="steps-description__body">
               <li>
                 Wash your right hand up to your wrist 3 times, while saying “Allahu-Akbar” each time.
               </li>

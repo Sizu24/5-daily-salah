@@ -1,15 +1,18 @@
 .steps {
+  position: absolute;
   display: flex;
   flex-direction: row;
+  left: 0;
   gap: rem(50px);
 }
 
-.steps__list {
+.steps-list {
   padding: 0;
   list-style: none;
+  word-break: normal;
 }
 
-.steps__list-item {
+.steps-list__item {
   margin-bottom: rem(10px);
 
   button {
@@ -31,31 +34,57 @@
   }
 }
 
-.steps__description {
+.steps-list__item--dark {
 
+  button {
+    background-color: transparent;
+    color: $white;
+    border: 2px solid $white;
+  }
 }
 
-.steps__description-title {
+.steps-list__button {
+  
+}
+
+.steps-description {
+  display: none;
+}
+
+.steps-description.show {
+  display: block;
+}
+
+.steps-description__title {
   font-family: $ff-main;
 }
 
-.steps__description-body {
-  position: relative;
-  width: 200px;
-  list-style: none;
+.steps-description__itle--dark {
+  color: $white;
 }
 
-.steps__description-item {
+.steps-description__body--dark {
+  color: $white;
+}
+
+.steps-description__body {
+  position: relative;
+  width: 200px;
+  font-family: $ff-main;
+  font-weight: $fw-light;
+}
+
+.steps-description__item {
   position: absolute;
   top: 0;
   opacity: 0;
   visibility: hidden;
   margin: rem(20px 0);
-  font-family: $ff-secondary;
+  font-family: $ff-main;
   font-size: rem(16px);
 }
 
-.steps__description-item.show {
+.steps-description__item.show {
   opacity: 1;
   visibility: visible;
 }
