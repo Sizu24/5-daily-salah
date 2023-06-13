@@ -1,4 +1,4 @@
-<div class="basics" id="#info">
+<div class="basics" id="basics">
   <div class="section">
     <h2 class="section__title">Prayer Basics</h2>
     <h3 class="section__subhead">
@@ -7,7 +7,10 @@
     <div class="section-categories">
       <ul class="section-categories__list">
         <li class="section-categories__list-item">
-          <button class="section-categories__list-button js-basics-categories selected" data-category="wudu">What is Wudu</button>
+          <button class="section-categories__list-button js-basics-categories selected" data-category="preparing">Preparing for Salah</button>
+        </li>
+        <li class="section-categories__list-item">
+          <button class="section-categories__list-button js-basics-categories" data-category="wudu">What is Wudu</button>
         </li>
         <li class="section-categories__list-item">
           <button class="section-categories__list-button js-basics-categories" data-category="rakat">What is a Rakat</button>
@@ -23,7 +26,21 @@
 
     <div class="section-content">
 
-      <div class="section-text js-basics-text show" data-category="wudu">
+      <div class="section-text js-basics-text show" id="basics-preparing" data-category="preparing">
+        <h3 class="section-text__title">Preparing for Salah</h3>
+        <p class="section-text__body">
+          Make sure you are clean. See the next step about Wudu, and follow those steps before starting your prayer.
+        </p>
+        <p class="section-text__body">
+          Wear clothes that makes sure you are covered. Women cover everything excpet face and hands. Men make sure you cover
+          down to your feet.
+        <p class="section-text__body">
+          Don't wear shorts, or shirts that have images of people/cartoons, 
+          or logos that look like people or animals.
+        </p>
+      </div>
+
+      <div class="section-text js-basics-text" data-category="wudu">
         <h3 class="section-text__title">What is Wudu?</h3>
         <p class="section-text__body">
           Wudu, also known as ablution, is a purification process that Muslims perform before prayer. 
@@ -62,29 +79,29 @@
       <h3 class="section-text__title">The 5 prayers</h3>
         <div class="steps">
           <ul class="steps-list">
-            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Fajr</button></li>
-            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Dhur</button></li>
-            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Asr</button></li>
-            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Maghrib</button></li>
-            <li class="steps-list__item"><button class="steps-list__button js-basics-choice">Isha</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice" data-step="Fajr">Fajr</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice" data-step="Dhur">Dhur</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice" data-step="Asr">Asr</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice" data-step="Maghrib">Maghrib</button></li>
+            <li class="steps-list__item"><button class="steps-list__button js-basics-choice" data-step="Isha">Isha</button></li>
           </ul>
 
           <div class="steps__description show">
             <h3 class="steps-description__title js-steps-title">Fajr</h3>
             <ul class="steps-description__body">
-              <li class="steps-description__item js-steps show" data-prayer="Fajr">
+              <li class="steps-description__item js-steps show" data-description="Fajr">
                 This is the morning prayer, which has <strong>TWO</strong> rakats.
               </li>
-              <li class="steps-description__item js-steps" data-prayer="Dhur">
+              <li class="steps-description__item js-steps" data-description="Dhur">
                 This is the afternoon prayer, which has <strong>FOUR</strong> rakats.
               </li>
-              <li class="steps-description__item js-steps" data-prayer="Asr">
+              <li class="steps-description__item js-steps" data-description="Asr">
                 This is the mid-day prayer, which has <strong>FOUR</strong> rakats.
               </li>
-              <li class="steps-description__item js-steps" data-prayer="Maghrib">
+              <li class="steps-description__item js-steps" data-description="Maghrib">
                 This is the evening prayer, which has <strong>THREE</strong> rakats.
               </li>
-              <li class="steps-description__item js-steps" data-prayer="Isha">
+              <li class="steps-description__item js-steps" data-description="Isha">
                 This is the night prayer, which has <strong>FOUR</strong> rakats.
               </li>
             </ul>

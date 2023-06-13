@@ -14,24 +14,6 @@
 
 .steps-list__item {
   margin-bottom: rem(10px);
-
-  button {
-    padding: rem(10px 80px);
-    width: 100%;
-    font-family: $ff-main;
-    color: $midnight-blue;
-    background-color: transparent;
-    text-align: center;
-    border: 2px solid $midnight-blue;
-    border-radius: rem(50px);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-
-    &:hover {
-      color: $white;
-      background-color: $midnight-blue;
-    }
-  }
 }
 
 .steps-list__item--dark {
@@ -44,47 +26,75 @@
 }
 
 .steps-list__button {
-  
+  padding: rem(10px 80px);
+  width: 100%;
+  font-family: $ff-main;
+  color: $midnight-blue;
+  background-color: transparent;
+  text-align: center;
+  border: 2px solid $midnight-blue;
+  border-radius: rem(50px);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: $white;
+    background-color: $midnight-blue;
+  }
+}
+
+.steps-list__button.selected {
+  color: $white;
+  background-color: $midnight-blue;
 }
 
 .steps-description {
-  display: none;
+  position: absolute;
+  left: 175%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s ease-in-out;
 }
 
 .steps-description.show {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .steps-description__title {
   font-family: $ff-main;
 }
 
-.steps-description__itle--dark {
+.steps-description__title--dark {
   color: $white;
+}
+
+.steps-description__body {
+  padding-left: rem(15px);
+  position: relative;
+  font-family: $ff-main;
+  font-weight: $fw-light;
 }
 
 .steps-description__body--dark {
   color: $white;
 }
 
-.steps-description__body {
-  position: relative;
-  width: 200px;
-  font-family: $ff-main;
-  font-weight: $fw-light;
-}
-
 .steps-description__item {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  visibility: hidden;
   margin: rem(20px 0);
   font-family: $ff-main;
   font-size: rem(16px);
+  line-height: 2;
 }
 
 .steps-description__item.show {
   opacity: 1;
   visibility: visible;
+}
+
+.steps-description__link {
+  color: #2B6E93;
+  font-weight: 900;
+  cursor: pointer;
 }

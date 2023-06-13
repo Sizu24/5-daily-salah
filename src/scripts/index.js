@@ -1,21 +1,24 @@
+console.log('Bismillah');
 fixedHeader();
 basicsCategories();
 basicsFivePrayers();
-wuduSteps();
+stepSelection();
 
 function fixedHeader() {
   const header = document.querySelector('.js-header');
-  let countDown = null;
   
   if (!header) return;
 
   window.addEventListener('scroll', () => {
     header.classList.remove('hide');
-    clearTimeout(countDown);
 
-    countDown = setTimeout(function() {
-      header.classList.add('hide');
-    }, 1500);
+    clearTimeout(this.countDown);
+
+    if (this.scrollY > 0) {
+      this.countDown = setTimeout(function() {
+        header.classList.add('hide');
+      }, 2000);
+    }
   });
 
   header.addEventListener('mouseover', () => {
@@ -76,19 +79,19 @@ function basicsFivePrayers() {
   });
 }
 
-function wuduSteps() {
-  const stepsButtons = document.querySelectorAll('.js-wudu-steps');
-  const wuduDescription = document.querySelectorAll('.js-wudu-description');
+function stepSelection() {
+  const steps = document.querySelectorAll('.js-step');
+  const descriptions = document.querySelectorAll('.js-description');
 
   function removeSelected() {
-    stepsButtons.forEach((button) => {
+    steps.forEach((button) => {
       button.classList.remove('selected');
     });
   }
 
   function showDescription(step) {
-    wuduDescription.forEach((description) => {
-      if (description.dataset.category === step.dataset.category) {
+    descriptions.forEach((description) => {
+      if (description.dataset.description === step.dataset.step) {
         description.classList.add('show');
       } else {
         description.classList.remove('show');
@@ -96,7 +99,7 @@ function wuduSteps() {
     });
   }
 
-  stepsButtons.forEach((step) => {
+  steps.forEach((step) => {
     step.addEventListener('click', () => {
       removeSelected();
       step.classList.add('selected');

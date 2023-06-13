@@ -41,18 +41,19 @@
 
 .hero-content__body {
   margin: rem(0 0 40px 0);
-  font-family: $ff-secondary;
+  font-family: $ff-main;
+  font-weight: $fw-semi;
   font-size: rem(20px);
-  color: $sky-blue;
+  color: $beige;
 }
 
 .hero-content__cta {
   display: inline-block;
   padding: rem(10px 40px);
-  background-color: $beige;
+  background-color: $sky-blue;
   font-size: rem(24px);
-  color: $teal-blue;
-  border: 2px solid $beige;
+  color: $beige;
+  border: 2px solid $sky-blue;
   text-decoration: none;
   border-radius: rem(50px);
   transition: all .2s ease-in-out;

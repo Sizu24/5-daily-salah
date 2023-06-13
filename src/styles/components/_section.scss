@@ -53,7 +53,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: rem(100px 0);
+  padding: rem(50px 0);
 
   @include size($sm) {
     flex-direction: row;
@@ -76,7 +76,7 @@
 .section__subhead {
   font-family: $ff-main;
   font-size: rem(20px);
-  font-weight: 100;
+  font-weight: 600;
   color: $teal-blue;
 }
 
@@ -103,11 +103,14 @@
 
 .section-text__title {
   font-family: $ff-main;
+  color: $dark-gray;
 }
 
 .section-text__body {
   font-family: $ff-main;
   font-weight: $fw-light;
+  color: $dark-gray;
+  line-height: 2;
 }
 
 .section-text__link {
