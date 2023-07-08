@@ -52,14 +52,7 @@
   position: absolute;
   left: 175%;
   width: 100%;
-  opacity: 0;
-  visibility: hidden;
   transition: all .2s ease-in-out;
-}
-
-.steps-description.show {
-  opacity: 1;
-  visibility: visible;
 }
 
 .steps-description__title {
