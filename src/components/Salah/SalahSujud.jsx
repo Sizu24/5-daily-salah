@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahSujud() {
   return (
-    <div className="steps-description js-description" data-description="sujud">
+    <div className="steps-description js-description">
       <h3 className="steps-description__title">Sujud</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">

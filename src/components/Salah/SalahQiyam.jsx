@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahQiyam() {
   return (
-    <div className="steps-description js-description" data-description="qiyam">
+    <div className="steps-description js-description">
       <h3 className="steps-description__title">Qiyam</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">

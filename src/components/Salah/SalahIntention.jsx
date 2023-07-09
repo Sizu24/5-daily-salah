@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahIntention() {
   return (
-    <div className="steps-description js-description" data-description="intention">
+    <div className="steps-description js-description">
       <h3 className="steps-description__title">Intention</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">

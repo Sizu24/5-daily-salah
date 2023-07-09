@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import SalahIntention from "./Salah/SalahIntention";
 import SalahPreparing from "./Salah/SalahPreparing";
@@ -15,17 +15,46 @@ function Salah() {
   let [activeComponent, setActiveComponent] = useState('Preparing');
 
   const steps = [
-    { name: 'Preparing', component: SalahPreparing},
-    { name: 'Intention', component: SalahIntention},
-    { name: 'Takbir', component: SalahTakbir},
-    { name: 'Qiyam', component: SalahQiyam},
-    { name: 'Al Fatiha', component: SalahAlFatiha},
-    { name: 'Ruku', component: SalahRuku},
-    { name: 'Stand', component: SalahStand},
-    { name: 'Sujud', component: SalahSujud},
-    { name: 'Quood', component: SalahQuood},
-    { name: 'Sujud', component: SalahStand},
+    { name: 'Preparing', component: 'SalahPreparing'},
+    { name: 'Intention', component: 'SalahIntention'},
+    { name: 'Takbir', component: 'SalahTakbir'},
+    { name: 'Qiyam', component: 'SalahQiyam'},
+    { name: 'Al Fatiha', component: 'SalahAlFatiha'},
+    { name: 'Ruku', component: 'SalahRuku'},
+    { name: 'Stand', component: 'SalahStand'},
+    { name: 'Sujud', component: 'SalahSujud'},
+    { name: 'Quood', component: 'SalahQuood'},
+    { name: 'Sujud', component: 'SalahSujud'},
   ];
+
+  useEffect(() => {
+    setActiveComponent(steps[0].component);
+  },[]);
+
+  function renderComponent() {
+    switch(activeComponent) {
+      case 'SalahPreparing':
+        return <SalahPreparing />;
+      case 'SalahIntention':
+        return <SalahIntention />;
+      case 'SalahTakbir': 
+        return <SalahTakbir />;
+      case 'SalahQiyam':
+        return <SalahQiyam />;
+      case 'SalahAlFatiha':
+        return <SalahAlFatiha />;
+      case 'SalahRuku':
+        return <SalahRuku />;
+      case 'SalahStand':
+        return <SalahStand />;
+      case 'SalahSujud':
+        return <SalahSujud />;
+      case 'SalahQuood':
+        return <SalahQuood />;
+      default:
+        return null;
+    }
+  }
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -56,7 +85,7 @@ function Salah() {
                   );
                 })}
               </ul>
-              {activeComponent}
+              {renderComponent()}
             </div>
           </div>
 

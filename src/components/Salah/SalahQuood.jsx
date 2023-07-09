@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahQuood() {
   return (
-    <div className="steps-description js-description" data-description="quood">
+    <div className="steps-description js-description">
       <h3 className="steps-description__title">Quood</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">

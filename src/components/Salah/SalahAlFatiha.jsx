@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahAlFatiha() {
   return (
-    <div className="steps-description js-description" data-description="al-fatiha">
+    <div className="steps-description js-description">
       <h3 className="steps-description__title">Al-Fatiha (1st surah of the Quran)</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">

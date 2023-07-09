@@ -2,7 +2,7 @@ import React from "react";
 
 function SalahPreparing() {
   return (
-    <div className="steps-description js-description show" data-description="preparing">
+    <div className="steps-description js-description show">
       <h3 className="steps-description__title">Preparing</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">
