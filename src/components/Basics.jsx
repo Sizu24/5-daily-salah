@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import BasicsPreparing from "./Basics/BasicsPreparing";
 import BasicsRakat from "./Basics/BasicsRakat";
 import BasicsWudu from "./Basics/BasicsWudu";
@@ -5,6 +7,41 @@ import BasicsPrayers from "./Basics/BasicsPrayers";
 import BasicsDua from "./Basics/BasicsDua";
 
 function Basics() {
+
+  let [activeComponent, setActiveComponent] = useState('BasicsPreparing');
+
+  const categories = [
+    {name: 'Preparing for Salah', component: 'BasicsPreparing'},
+    {name: 'What is Wudu', component: 'BasicsWudu'},
+    {name: 'What is a Rakat', component: 'BasicsRakat'},
+    {name: 'The 5 Prayers', component: 'BasicsPrayers'},
+    {name: 'What is Dua', component: 'BasicsDua'},
+  ];
+
+  function handleClick(e) {
+    const value = e.target.textContent;
+    categories.forEach((category) => {
+      category.name === value && setActiveComponent(category.component);
+    });
+  }
+
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'BasicsPreparing':
+        return <BasicsPreparing />;
+      case 'BasicsWudu':
+        return <BasicsWudu />;
+      case 'BasicsRakat':
+        return <BasicsRakat />;
+      case 'BasicsPrayers':
+        return <BasicsPrayers />;
+      case 'BasicsDua':
+        return <BasicsDua />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="basics" id="basics">
       <div className="section">
@@ -17,31 +54,18 @@ function Basics() {
 
         <div className="section-categories">
           <ul className="section-categories__list">
-            <li className="section-categories__list-item">
-              <button className="section-categories__list-button js-basics-categories selected" data-category="preparing">Preparing for Salah</button>
-            </li>
-            <li className="section-categories__list-item">
-              <button className="section-categories__list-button js-basics-categories" data-category="wudu">What is Wudu</button>
-            </li>
-            <li className="section-categories__list-item">
-              <button className="section-categories__list-button js-basics-categories" data-category="rakat">What is a Rakat</button>
-            </li>
-            <li className="section-categories__list-item">
-              <button className="section-categories__list-button js-basics-categories" data-category="prayers">The 5 Prayers</button>
-            </li>
-            <li className="section-categories__list-item">
-              <button className="section-categories__list-button js-basics-categories" data-category="dua">What is Dua</button>
-            </li>
+            {categories.map((category, index) => {
+              return (
+                <li key={index} className="section-categories__list-item">
+                  <button className="section-categories__list-button" onClick={handleClick}>{category.name}</button>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
         <div className="section-content">
-          <BasicsPreparing />
-          <BasicsWudu />
-          <BasicsRakat />
-          <BasicsPrayers />
-          <BasicsDua />
-          
+            {renderComponent()}
           <div className="section-media">
             <img src="../src/images/wudu-image1.jpg" alt="" className="section-media__image" />
           </div>

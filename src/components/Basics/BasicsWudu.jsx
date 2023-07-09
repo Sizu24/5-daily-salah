@@ -1,6 +1,6 @@
 function BasicsWudu() {
   return (
-    <div className="section-text js-basics-text" data-category="wudu">
+    <div className="section-text">
       <h3 className="section-text__title">What is Wudu?</h3>
       <p className="section-text__body">
         Wudu, also known as ablution, is a purification process that Muslims perform before prayer. 

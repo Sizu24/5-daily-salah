@@ -88,17 +88,6 @@
   position: absolute;
   left: 0;
   max-width: 40%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-100%);
-  transition: all .4s ease-in-out;
-}
-
-.section-text.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0%);
-  transition: all .4s ease-in-out;
 }
 
 .section-text__title {

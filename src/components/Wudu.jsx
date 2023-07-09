@@ -15,16 +15,45 @@ function Wudu() {
   let [activeComponent, setActiveComponent] = useState();
 
   const steps = [
-    { name: 'Intention', component: WuduIntention},
-    { name: 'Hands', component: WuduHands},
-    { name: 'Mouth', component: WuduMouth},
-    { name: 'Nose', component: WuduNose},
-    { name: 'Face', component: WuduFace},
-    { name: 'Arms', component: WuduArms},
-    { name: 'Hair', component: WuduHair},
-    { name: 'Ears', component: WuduEars},
-    { name: 'Feet', component: WuduFeet},
+    { name: 'Intention', component: 'WuduIntention'},
+    { name: 'Hands', component: 'WuduHands'},
+    { name: 'Mouth', component: 'WuduMouth'},
+    { name: 'Nose', component: 'WuduNose'},
+    { name: 'Face', component: 'WuduFace'},
+    { name: 'Arms', component: 'WuduArms'},
+    { name: 'Hair', component: 'WuduHair'},
+    { name: 'Ears', component: 'WuduEars'},
+    { name: 'Feet', component: 'WuduFeet'},
   ];
+
+  useEffect(() => {
+    setActiveComponent(steps[0].component);
+  },[]);
+
+  function renderComponent() {
+    switch (activeComponent) {
+      case 'WuduIntention':
+        return <WuduIntention />;
+      case 'WuduHands':
+        return <WuduHands />;
+      case 'WuduMouth':
+        return <WuduMouth />;
+      case 'WuduNose':
+        return <WuduNose />;
+      case 'WuduFace':
+        return <WuduFace />;
+      case 'WuduArms':
+        return <WuduArms />;
+      case 'WuduHair':
+        return <WuduHair />;
+      case 'WuduEars':
+        return <WuduEars />;
+      case 'WuduFeet':
+        return <WuduFeet />;
+      default:
+        return null;
+    }
+  }
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -55,7 +84,7 @@ function Wudu() {
                 );
               })}
             </ul>
-            {activeComponent}
+            {renderComponent()}
           </div>
         </div>
         <div className="section-media">
