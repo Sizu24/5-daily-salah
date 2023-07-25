@@ -1,67 +1,44 @@
 import { useState, useEffect } from "react";
-
-import SalahIntention from "./Salah/SalahIntention";
-import SalahPreparing from "./Salah/SalahPreparing";
-import SalahTakbir from "./Salah/SalahTakbir";
-import SalahQiyam from "./Salah/SalahQiyam";
-import SalahAlFatiha from "./Salah/SalahAlFatiha";
-import SalahRuku from "./Salah/SalahRuku";
-import SalahStand from "./Salah/SalahStand";
-import SalahSujud from "./Salah/SalahSujud";
-import SalahQuood from "./Salah/SalahQuood";
+import Fajr from "./Salah/Prayer/Fajr";
+import Dhuhr from "./Salah/Prayer/Dhuhr";
+import Asr from "./Salah/Prayer/Asr";
+import Maghrib from "./Salah/Prayer/Maghrib";
+import Isha from "./Salah/Prayer/Isha";
 
 function Salah() {
 
-  let [activeComponent, setActiveComponent] = useState('Preparing');
+  const [rakat, setRakat] = useState("");
+  const [prayer, setPrayer] = useState("");
+  const [activeComponent, setActiveComponent] = useState('Preparing');
 
-  const steps = [
-    { name: 'Preparing', component: 'SalahPreparing'},
-    { name: 'Intention', component: 'SalahIntention'},
-    { name: 'Takbir', component: 'SalahTakbir'},
-    { name: 'Qiyam', component: 'SalahQiyam'},
-    { name: 'Al Fatiha', component: 'SalahAlFatiha'},
-    { name: 'Ruku', component: 'SalahRuku'},
-    { name: 'Stand', component: 'SalahStand'},
-    { name: 'Sujud', component: 'SalahSujud'},
-    { name: 'Quood', component: 'SalahQuood'},
-    { name: 'Sujud', component: 'SalahSujud'},
-  ];
+  const rakats = [
+    { name: 'rakat 1', component: 'OneRakat'},
+    { name: 'rakat 2', component: 'TwoRakat'},
+    { name: 'rakat 3', component: 'ThreeRakat'},
+    { name: 'rakat 4', component: 'FourRakat'},
+  ]
 
-  useEffect(() => {
-    setActiveComponent(steps[0].component);
-  },[]);
-
-  function renderComponent() {
-    switch(activeComponent) {
-      case 'SalahPreparing':
-        return <SalahPreparing />;
-      case 'SalahIntention':
-        return <SalahIntention />;
-      case 'SalahTakbir': 
-        return <SalahTakbir />;
-      case 'SalahQiyam':
-        return <SalahQiyam />;
-      case 'SalahAlFatiha':
-        return <SalahAlFatiha />;
-      case 'SalahRuku':
-        return <SalahRuku />;
-      case 'SalahStand':
-        return <SalahStand />;
-      case 'SalahSujud':
-        return <SalahSujud />;
-      case 'SalahQuood':
-        return <SalahQuood />;
+  function showPrayer() {
+    switch(prayer) {
+      case 'fajr':
+        return <Fajr />;
+      case 'dhuhr':
+        return <Dhuhr />;
+      case 'asr': 
+        return <Asr />;
+      case 'maghrib':
+        return <Maghrib />;
+      case 'isha':
+        return <Isha />;
       default:
         return null;
     }
   }
 
-  function handleClick(e) {
-    const value = e.target.textContent;
 
-    steps.map((step) => {
-      value === step.name && setActiveComponent(step.component);
-    });
+  function handleChange(e) {
+    const value = e.target.value;
+    setPrayer(value);
   }
 
   return (
@@ -71,28 +48,19 @@ function Salah() {
         <h3 className="section__subhead">
           This is the prayer step-by-step. Follow from top to bottom.
         </h3>
-        <div className="section-content">
-          <div className="salah-text">
-            <div className="steps js-steps-list">
-              <ul className="steps-list">
-                {steps.map((step, index) => {
-                  return(
-                    <li key={index} className="steps-list__item">
-                      <button onClick={handleClick} className="steps-list__button">
-                        {step.name}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-              {renderComponent()}
-            </div>
-          </div>
 
-          <div className="section-media">
-            <img src="../src/images/wudu-image1.png" alt="" className="section-media__image" />
-          </div>
+        <div className="dropdown-section">
+          <label className="dropdown__label" htmlFor="dropdown">Select Prayer:</label>
+          <select className="dropdown" onChange={handleChange} id="dropdown">
+            <option value="">--Choose--</option>
+            <option value="fajr">Fajr</option>
+            <option value="dhuhr">Dhur</option>
+            <option value="asr">Asr</option>
+            <option value="maghrib">Maghrib</option>
+            <option value="isha">Isha</option>
+          </select>
         </div>
+        {showPrayer()}
       </div>
     </div>
   );

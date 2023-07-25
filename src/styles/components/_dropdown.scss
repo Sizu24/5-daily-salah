@@ -1,0 +1,23 @@
+.dropdown-section {
+  display: flex;
+  flex-direction: column;
+  margin: rem(30px 0);
+  max-width: rem(690px);
+  // margin: rem(50px 0);
+}
+
+.dropdown {
+  padding: rem(15px);
+  border: 2px solid $midnight-blue;
+  border-radius: rem(15px);
+  width: 100%;
+  background-color: transparent;
+}
+
+.dropdown__label {
+  margin: rem(10px 0);
+  font-family: $ff-main;
+  font-size: rem(20px);
+  font-weight: $fw-semi;
+  color: $midnight-blue;
+}

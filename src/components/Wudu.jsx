@@ -13,6 +13,7 @@ import WuduFeet from "./Wudu/WuduFeet";
 function Wudu() {
 
   let [activeComponent, setActiveComponent] = useState();
+  let [activeButton, setActiveButton] = useState();
 
   const steps = [
     { name: 'Intention', component: 'WuduIntention'},
