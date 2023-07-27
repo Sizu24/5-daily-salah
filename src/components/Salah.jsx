@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Fajr from "./Salah/Prayer/Fajr";
 import Dhuhr from "./Salah/Prayer/Dhuhr";
 import Asr from "./Salah/Prayer/Asr";

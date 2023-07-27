@@ -1,3 +1,5 @@
+import React from "react";
+
 function WuduFeet() {
   return (
     <div className="steps-description js-description" data-description="feet">

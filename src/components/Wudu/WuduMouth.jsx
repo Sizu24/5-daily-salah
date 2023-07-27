@@ -1,3 +1,5 @@
+import React from "react";
+
 function WuduMouth() {
   return (
     <div className="steps-description js-description" data-description="mouth">

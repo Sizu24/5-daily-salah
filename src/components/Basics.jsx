@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import BasicsPreparing from "./Basics/BasicsPreparing";
 import BasicsRakat from "./Basics/BasicsRakat";

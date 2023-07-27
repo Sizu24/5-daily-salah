@@ -1,3 +1,5 @@
+import React from "react";
+
 function BasicsRakat() {
   return (
     <div className="section-text js-basics-text" data-category="rakat">

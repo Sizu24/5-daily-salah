@@ -1,3 +1,5 @@
+import React from "react";
+
 function BasicsPreparing() {
   return (
     <div className="section-text js-basics-text show" id="basics-preparing" data-category="preparing">

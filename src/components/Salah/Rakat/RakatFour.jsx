@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SalahIntention from "../SalahIntention"
-import SalahPreparing from "../SalahPreparing";
 import SalahTakbir from "../SalahTakbir";
 import SalahQiyam from "../SalahQiyam";
 import SalahAlFatiha from "../SalahAlFatiha";

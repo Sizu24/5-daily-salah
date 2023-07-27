@@ -1,3 +1,5 @@
+import React from "react";
+
 function BasicsWudu() {
   return (
     <div className="section-text">

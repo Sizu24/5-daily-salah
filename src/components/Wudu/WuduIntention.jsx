@@ -1,3 +1,5 @@
+import React from "react";
+
 function WuduIntention() {
   return (
     <div className="steps-description js-description show" data-description="intention">

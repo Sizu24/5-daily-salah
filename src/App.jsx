@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles/styles.scss";
 import Header from "./layout/Header";
 import Hero from "./components/Hero";

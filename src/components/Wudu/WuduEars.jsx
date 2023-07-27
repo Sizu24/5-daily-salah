@@ -1,3 +1,5 @@
+import React from "react";
+
 function WuduEars() {
   return (
     <div className="steps-description js-description" data-description="ears">
