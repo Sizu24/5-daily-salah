@@ -1,9 +1,9 @@
 import "./styles/styles.scss";
-import Header from "./components/Header";
+import Header from "./layout/Header";
 import Hero from "./components/Hero";
 import Wudu from "./components/Wudu";
 import Salah from "./components/Salah";
-import Footer from "./components/Footer";
+import Footer from "./layout/Footer";
 import Basics from "./components/Basics";
 
 function App() {

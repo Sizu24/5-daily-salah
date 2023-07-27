@@ -49,8 +49,9 @@
 
 .hero-content__cta {
   display: inline-block;
-  padding: rem(10px 40px);
+  padding: rem(15px 40px);
   background-color: $sky-blue;
+  font-family: $ff-main;
   font-size: rem(24px);
   color: $beige;
   border: 2px solid $sky-blue;
