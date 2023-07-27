@@ -1,72 +1,41 @@
 import React, { useEffect, useState } from "react";
-import SalahIntention from "../SalahIntention"
-import SalahPreparing from "../SalahPreparing";
-import SalahTakbir from "../SalahTakbir";
-import SalahQiyam from "../SalahQiyam";
-import SalahAlFatiha from "../SalahAlFatiha";
-import SalahRuku from "../SalahRuku";
-import SalahStand from "../SalahStand";
-import SalahSujud from "../SalahSujud";
-import SalahQuood from "../SalahQuood";
+import RakatOne from "../Rakat/RakatOne";
+import RakatTwo from "../Rakat/RakatTwo";
+import RakatThree from "../Rakat/RakatThree";
+import RakatFour from "../Rakat/RakatFour";
 
 function Isha() {
 
   const [rakat, setRakat] = useState("");
-  const [activeComponent, setActiveComponent] = useState('Preparing');
 
   const rakats = [
-    { name: 'rakat 1', component: 'OneRakat'},
-    { name: 'rakat 2', component: 'TwoRakat'},
-    { name: 'rakat 3', component: 'ThreeRakat'},
-    { name: 'rakat 4', component: 'FourRakat'},
+    { name: 'rakat 1', component: 'RakatOne'},
+    { name: 'rakat 2', component: 'RakatTwo'},
+    { name: 'rakat 3', component: 'RakatThree'},
+    { name: 'rakat 4', component: 'RakatFour'},
   ]
 
-  const steps = [
-    { name: 'Preparing', component: 'SalahPreparing'},
-    { name: 'Intention', component: 'SalahIntention'},
-    { name: 'Takbir', component: 'SalahTakbir'},
-    { name: 'Qiyam', component: 'SalahQiyam'},
-    { name: 'Al Fatiha', component: 'SalahAlFatiha'},
-    { name: 'Ruku', component: 'SalahRuku'},
-    { name: 'Stand', component: 'SalahStand'},
-    { name: 'Sujud', component: 'SalahSujud'},
-    { name: 'Quood', component: 'SalahQuood'},
-    { name: 'Sujud', component: 'SalahSujud'},
-  ];
-
   useEffect(() => {
-    setActiveComponent(steps[0].component);
+    setRakat(rakats[0].name);
   },[]);
-
 
   function handleClick(e) {
     const value = e.target.textContent;
-
-    steps.map((step) => {
-      value === step.name && setActiveComponent(step.component);
+    rakats.map((rakat) => {
+      rakat.name === value  && setRakat(value);
     });
   }
 
-  function renderComponent() {
-    switch(activeComponent) {
-      case 'SalahPreparing':
-        return <SalahPreparing />;
-      case 'SalahIntention':
-        return <SalahIntention />;
-      case 'SalahTakbir': 
-        return <SalahTakbir />;
-      case 'SalahQiyam':
-        return <SalahQiyam />;
-      case 'SalahAlFatiha':
-        return <SalahAlFatiha />;
-      case 'SalahRuku':
-        return <SalahRuku />;
-      case 'SalahStand':
-        return <SalahStand />;
-      case 'SalahSujud':
-        return <SalahSujud />;
-      case 'SalahQuood':
-        return <SalahQuood />;
+  function showRakat() {
+    switch(rakat) {
+      case "rakat 1" :
+        return <RakatOne />;
+      case "rakat 2" :
+        return <RakatTwo />;
+      case "rakat 3" :
+        return <RakatThree />;
+      case "rakat 4" :
+        return <RakatFour />;
       default:
         return null;
     }
@@ -89,20 +58,7 @@ function Isha() {
 
       <div className="section-content">
         <div className="salah-text">
-          <div className="steps js-steps-list">
-            <ul className="steps-list">
-              {steps.map((step, index) => {
-                return(
-                  <li key={index} className="steps-list__item">
-                    <button onClick={handleClick} className="steps-list__button">
-                      {step.name}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-            {renderComponent()}
-          </div>
+          {showRakat()}
         </div>
 
         <div className="section-media">

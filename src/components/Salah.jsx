@@ -7,16 +7,7 @@ import Isha from "./Salah/Prayer/Isha";
 
 function Salah() {
 
-  const [rakat, setRakat] = useState("");
   const [prayer, setPrayer] = useState("");
-  const [activeComponent, setActiveComponent] = useState('Preparing');
-
-  const rakats = [
-    { name: 'rakat 1', component: 'OneRakat'},
-    { name: 'rakat 2', component: 'TwoRakat'},
-    { name: 'rakat 3', component: 'ThreeRakat'},
-    { name: 'rakat 4', component: 'FourRakat'},
-  ]
 
   function showPrayer() {
     switch(prayer) {
@@ -34,7 +25,6 @@ function Salah() {
         return null;
     }
   }
-
 
   function handleChange(e) {
     const value = e.target.value;
