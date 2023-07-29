@@ -11,8 +11,6 @@ function RakatThree() {
   const [activeComponent, setActiveComponent] = useState('Preparing');
 
   const steps = [
-    { name: 'Takbir', component: 'SalahTakbir'},
-    { name: 'Qiyam', component: 'SalahQiyam'},
     { name: 'Al Fatiha', component: 'SalahAlFatiha'},
     { name: 'Ruku', component: 'SalahRuku'},
     { name: 'Stand', component: 'SalahStand'},
@@ -23,10 +21,6 @@ function RakatThree() {
 
   function renderComponent() {
     switch(activeComponent) {
-      case 'SalahTakbir': 
-        return <SalahTakbir />;
-      case 'SalahQiyam':
-        return <SalahQiyam />;
       case 'SalahAlFatiha':
         return <SalahAlFatiha />;
       case 'SalahRuku':

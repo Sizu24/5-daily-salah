@@ -31,7 +31,7 @@ function Dhuhr() {
       case "rakat 1" :
         return <RakatOne />;
       case "rakat 2" :
-        return <RakatTwo />;
+        return <RakatTwo lastRakat={false} />;
       case "rakat 3" :
         return <RakatThree />;
       case "rakat 4" :

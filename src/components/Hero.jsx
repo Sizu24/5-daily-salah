@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function Hero() {
   return (
@@ -9,7 +10,7 @@ function Hero() {
         <p className="hero-content__body">
           Simple step-by-step guide for muslims that want to learn how to pray.
         </p>
-        <a href="#wudu" className="hero-content__cta">Start Learning</a>
+        <Link to="wudu" className="hero-content__cta" smooth="true">Start Learning</Link>
       </div>
       </div>
   );

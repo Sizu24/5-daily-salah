@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
-import SalahTakbir from "../SalahTakbir";
-import SalahQiyam from "../SalahQiyam";
 import SalahAlFatiha from "../SalahAlFatiha";
 import SalahRuku from "../SalahRuku";
 import SalahStand from "../SalahStand";
 import SalahSujud from "../SalahSujud";
 import SalahQuood from "../SalahQuood";
+import SalahAtTashahhud from "../SalahAtTashahhud";
+import SalahAsSalahAlanNabiyy from "../SalahAsSalahAlanNabiyy";
+import SalahDua from "../SalahDua";
+import SalahEnd from "../SalahEnd";
 
-function RakatTwo() {
+function RakatTwo(lastRakat) {
   const [activeComponent, setActiveComponent] = useState('Preparing');
 
   const steps = [
-    { name: 'Takbir', component: 'SalahTakbir'},
-    { name: 'Qiyam', component: 'SalahQiyam'},
     { name: 'Al Fatiha', component: 'SalahAlFatiha'},
     { name: 'Ruku', component: 'SalahRuku'},
     { name: 'Stand', component: 'SalahStand'},
     { name: 'Sujud', component: 'SalahSujud'},
     { name: 'Quood', component: 'SalahQuood'},
     { name: 'Sujud', component: 'SalahSujud'},
+    { name: 'At-Tashahhud', component: 'SalahAtTashahuud'},
+    { name: 'As-Salah alan nabiyy', component: 'SalahAsSalahAlanNabiyy'},
+    { name: 'Dua', component: 'SalahDua'},
+    { name: 'End', component: 'SalahEnd'},
   ];
 
   function renderComponent() {
     switch(activeComponent) {
-      case 'SalahTakbir': 
-        return <SalahTakbir />;
-      case 'SalahQiyam':
-        return <SalahQiyam />;
       case 'SalahAlFatiha':
         return <SalahAlFatiha />;
       case 'SalahRuku':
@@ -37,6 +37,14 @@ function RakatTwo() {
         return <SalahSujud />;
       case 'SalahQuood':
         return <SalahQuood />;
+      case 'SalahAtTashahuud':
+        return <SalahAtTashahhud />;
+      case 'SalahAsSalahAlanNabiyy':
+        return <SalahAsSalahAlanNabiyy />;
+      case 'SalahDua':
+        return <SalahDua />;
+      case 'SalahEnd':
+        return <SalahEnd />;
       default:
         return null;
     }

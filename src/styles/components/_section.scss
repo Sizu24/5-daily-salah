@@ -39,13 +39,13 @@
 
 
   &:hover {
-    color: $white;
+    color: $light;
     background-color: $midnight-blue;
   }
 }
 
 .section-categories__list-button.selected {
-  color: $white;
+  color: $light;
   background-color: $midnight-blue;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .section__title--dark {
-  color: $white;
+  color: $light;
 }
 
 .section__subhead {
@@ -81,7 +81,7 @@
 }
 
 .section__subhead--dark {
-  color: $white;
+  color: $light;
 }
 
 .section-text {

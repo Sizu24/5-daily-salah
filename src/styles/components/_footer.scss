@@ -1,0 +1,34 @@
+.footer {
+  background-color: $navy-blue;
+}
+
+.footer-container {
+  padding: rem(80px);
+}
+
+.footer-column {
+
+}
+
+.footer-links {
+  padding: 0;
+  list-style: none;
+  font-family: $ff-main;
+}
+
+.footer-links__item {
+  padding: rem(20px 0);
+  color: $beige;
+
+  a {
+    color: $beige;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.footer-legal {
+  padding: rem(25px 80px);
+  font-family: $ff-main;
+  color: $beige;
+}

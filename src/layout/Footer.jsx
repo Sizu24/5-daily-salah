@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-column">
-          <ul>
-            <li>Basics</li>
-            <li>Wudu</li>
-            <li>Salah</li>
-            <li>Info</li>
+          <ul className="footer-links">
+            <li className="footer-links__item"><Link to="basics" smooth={true}>Basics</Link></li>
+            <li className="footer-links__item"><Link to="wudu" smooth={true}>Wudu</Link></li>
+            <li className="footer-links__item"><Link to="salah" smooth={true}>Salah</Link></li>
+            <li className="footer-links__item"><Link to="info" smooth={true}>Info</Link></li>
           </ul>
         </div>
         <div className="footer-column"></div>

@@ -4,12 +4,13 @@ import RakatTwo from "../Rakat/RakatTwo";
 
 function Fajr() {
 
-  const [rakat, setRakat] = useState("");
-
   const rakats = [
     { name: 'rakat 1', component: 'RakatOne'},
     { name: 'rakat 2', component: 'RakatTwo'},
   ]
+
+  const [rakat, setRakat] = useState("");
+  const [activeRakat, setActiveRakat] = useState(rakats[0]);
 
   useEffect(() => {
     setRakat(rakats[0].name);
@@ -19,6 +20,7 @@ function Fajr() {
     const value = e.target.textContent;
     rakats.map((rakat) => {
       rakat.name === value  && setRakat(value);
+      rakat.name === value && setActiveRakat(rakat);
     });
   }
 
@@ -27,7 +29,7 @@ function Fajr() {
       case "rakat 1" :
         return <RakatOne />;
       case "rakat 2" :
-        return <RakatTwo />;
+        return <RakatTwo lastRakat={true} />;
       default:
         return null;
     }
