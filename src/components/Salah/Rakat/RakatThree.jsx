@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from "react";
-import SalahTakbir from "../SalahTakbir";
-import SalahQiyam from "../SalahQiyam";
 import SalahAlFatiha from "../SalahAlFatiha";
 import SalahRuku from "../SalahRuku";
 import SalahStand from "../SalahStand";
 import SalahSujud from "../SalahSujud";
 import SalahQuood from "../SalahQuood";
+import SalahAtTashahhud from "../SalahAtTashahhud";
+import SalahAsSalahAlanNabiyy from "../SalahAsSalahAlanNabiyy";
+import SalahDua from "../SalahDua";
+import SalahEnd from "../SalahEnd";
 
-function RakatThree() {
-  const [activeComponent, setActiveComponent] = useState('Preparing');
+function RakatThree({lastRakat}) {
 
-  const steps = [
+  console.log("Last Rakat: ", lastRakat);
+
+  let stepsList = [
     { name: 'Al Fatiha', component: 'SalahAlFatiha'},
     { name: 'Ruku', component: 'SalahRuku'},
     { name: 'Stand', component: 'SalahStand'},
     { name: 'Sujud', component: 'SalahSujud'},
     { name: 'Quood', component: 'SalahQuood'},
     { name: 'Sujud', component: 'SalahSujud'},
+    { name: 'At-Tashahhud', component: 'SalahAtTashahuud'},
+    { name: 'As-Salah alan nabiyy', component: 'SalahAsSalahAlanNabiyy'},
+    { name: 'Dua', component: 'SalahDua'},
+    { name: 'End', component: 'SalahEnd'},
   ];
+
+  const [activeComponent, setActiveComponent] = useState('Preparing');
+  const [steps, setSteps] = useState(stepsList);
 
   function renderComponent() {
     switch(activeComponent) {
@@ -31,6 +41,14 @@ function RakatThree() {
         return <SalahSujud />;
       case 'SalahQuood':
         return <SalahQuood />;
+      case 'SalahAtTashahuud':
+        return <SalahAtTashahhud />;
+      case 'SalahAsSalahAlanNabiyy':
+        return <SalahAsSalahAlanNabiyy />;
+      case 'SalahDua':
+        return <SalahDua />;
+      case 'SalahEnd':
+        return <SalahEnd />;
       default:
         return null;
     }
@@ -38,7 +56,23 @@ function RakatThree() {
 
   useEffect(() => {
     setActiveComponent(steps[0].component);
+    createSteps();
   },[]);
+
+  function checkIfLastRakat() {
+    if (lastRakat === true) {
+      return true;
+    }
+  }
+
+  function createSteps() {
+    const isLast = checkIfLastRakat();
+    if (isLast) {
+      setSteps(stepsList);
+    } else {
+      setSteps(stepsList.slice(0, -4));
+    }
+  }
 
 
   function handleClick(e) {

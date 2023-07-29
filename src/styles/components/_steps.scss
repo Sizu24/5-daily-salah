@@ -1,9 +1,12 @@
 .steps {
-  position: absolute;
   display: flex;
   flex-direction: row;
-  left: 0;
   gap: rem(50px);
+
+  @include size($md) {
+    position: absolute;
+    left: 0;
+  }  
 }
 
 .steps-list {
@@ -49,10 +52,13 @@
 }
 
 .steps-description {
-  position: absolute;
-  left: 175%;
   width: 100%;
   transition: all .2s ease-in-out;
+
+  @include size($md) {
+    position: absolute;
+    left: 175%;
+  }    
 }
 
 .steps-description__title {

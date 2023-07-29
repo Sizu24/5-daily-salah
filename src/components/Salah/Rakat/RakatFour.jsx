@@ -9,10 +9,11 @@ import SalahAsSalahAlanNabiyy from "../SalahAsSalahAlanNabiyy";
 import SalahDua from "../SalahDua";
 import SalahEnd from "../SalahEnd";
 
-function RakatFour(lastRakat) {
-  const [activeComponent, setActiveComponent] = useState('Preparing');
+function RakatFour({lastRakat}) {
 
-  const steps = [
+  console.log("Last Rakat: ", lastRakat);
+
+  let stepsList = [
     { name: 'Al Fatiha', component: 'SalahAlFatiha'},
     { name: 'Ruku', component: 'SalahRuku'},
     { name: 'Stand', component: 'SalahStand'},
@@ -24,6 +25,9 @@ function RakatFour(lastRakat) {
     { name: 'Dua', component: 'SalahDua'},
     { name: 'End', component: 'SalahEnd'},
   ];
+
+  const [activeComponent, setActiveComponent] = useState('Preparing');
+  const [steps, setSteps] = useState(stepsList);
 
   function renderComponent() {
     switch(activeComponent) {
@@ -52,7 +56,23 @@ function RakatFour(lastRakat) {
 
   useEffect(() => {
     setActiveComponent(steps[0].component);
+    createSteps();
   },[]);
+
+  function checkIfLastRakat() {
+    if (lastRakat === true) {
+      return true;
+    }
+  }
+
+  function createSteps() {
+    const isLast = checkIfLastRakat();
+    if (isLast) {
+      setSteps(stepsList);
+    } else {
+      setSteps(stepsList.slice(0, -3));
+    }
+  }
 
 
   function handleClick(e) {

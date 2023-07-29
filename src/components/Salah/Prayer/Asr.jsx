@@ -33,9 +33,9 @@ function Asr() {
       case "rakat 2" :
         return <RakatTwo lastRakat={false} />;
       case "rakat 3" :
-        return <RakatThree />;
+        return <RakatThree lastRakat={false} />;
       case "rakat 4" :
-        return <RakatFour />;
+        return <RakatFour lastRakat={true}/>;
       default:
         return null;
     }

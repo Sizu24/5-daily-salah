@@ -24,14 +24,15 @@ function Maghrib() {
     });
   }
 
+
   function showRakat() {
     switch(rakat) {
       case "rakat 1" :
         return <RakatOne />;
       case "rakat 2" :
-        return <RakatTwo />;
+        return <RakatTwo lastRakat={false} />;
       case "rakat 3" :
-        return <RakatThree />;
+        return <RakatThree lastRakat={true} />;
       default:
         return null;
     }
