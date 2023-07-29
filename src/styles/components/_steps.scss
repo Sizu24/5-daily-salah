@@ -3,7 +3,7 @@
   flex-direction: row;
   gap: rem(50px);
 
-  @include size($md) {
+  @include size($xl) {
     position: absolute;
     left: 0;
   }  
@@ -55,7 +55,7 @@
   width: 100%;
   transition: all .2s ease-in-out;
 
-  @include size($md) {
+  @include size($xl) {
     position: absolute;
     left: 175%;
   }    
