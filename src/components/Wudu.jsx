@@ -21,7 +21,7 @@ import wuduFeet from "../images/wudufeet.png";
 function Wudu() {
 
   let [activeComponent, setActiveComponent] = useState();
-  const [activeImage, setActiveImage] = useState("../src/images/wudu-image1.png");
+  const [activeImage, setActiveImage] = useState(wuduHands);
   let [activeButton, setActiveButton] = useState();
 
   const steps = [
