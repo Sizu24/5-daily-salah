@@ -60,6 +60,12 @@
 
   @include size($lg) {
     flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.section-content--wide {
+  @include size($lg) {
     justify-content: flex-end;
   }
 }
@@ -124,7 +130,12 @@
 }
 
 .section-media {
-  max-width: 100%;
+  max-width: 65%;
+
+  @include size($lg) {
+    margin-left: 30%;
+    max-width: 25%;
+  }  
 }
 
 .section-media__image {

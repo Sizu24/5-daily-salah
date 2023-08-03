@@ -9,30 +9,31 @@ function Fajr() {
     { name: 'rakat 2', component: 'RakatTwo'},
   ]
 
-  const [rakat, setRakat] = useState("");
-  const [activeRakat, setActiveRakat] = useState(rakats[0]);
-
-  useEffect(() => {
-    setRakat(rakats[0].name);
-  },[]);
+  const [rakat, setRakat] = useState(rakats[0].name);
+  const [activeButton, setActiveButton] = useState(rakats[0].name);
+  const [activeImage, setActiveImage] = useState("../src/images/standstraight.png");
 
   function handleClick(e) {
     const value = e.target.textContent;
     rakats.map((rakat) => {
       rakat.name === value  && setRakat(value);
-      rakat.name === value && setActiveRakat(rakat);
+      rakat.name === value && setActiveButton(rakat.name);
     });
   }
 
   function showRakat() {
     switch(rakat) {
       case "rakat 1" :
-        return <RakatOne />;
+        return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={true} />;
+        return <RakatTwo lastRakat={true} getImage={salahImage} />;
       default:
         return null;
     }
+  }
+
+  function salahImage(image) {
+    setActiveImage(image);
   }
 
   return (
@@ -42,7 +43,7 @@ function Fajr() {
           {rakats.map((rakat, index) => {
             return (
               <li key={index} className="section-categories__list-item">
-                <button className="section-categories__list-button" onClick={handleClick}>{rakat.name}</button>
+                <button className={activeButton === rakat.name ? "section-categories__list-button selected" : "section-categories__list-button"} onClick={handleClick}>{rakat.name}</button>
               </li>
             );
           })}
@@ -55,7 +56,7 @@ function Fajr() {
           {showRakat()}
         </div>
         <div className="section-media">
-          <img src="../src/images/wudu-image1.png" alt="" className="section-media__image" />
+          <img src={activeImage} alt="" className="section-media__image" />
         </div>
       </div>
     </>

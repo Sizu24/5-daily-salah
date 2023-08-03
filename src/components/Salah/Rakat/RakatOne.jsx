@@ -9,21 +9,31 @@ import SalahStand from "../SalahStand";
 import SalahSujud from "../SalahSujud";
 import SalahQuood from "../SalahQuood";
 
-function RakatOne() {
-  const [activeComponent, setActiveComponent] = useState('Preparing');
+import handsEars from "../../../images/handsears.png";
+import standing from "../../../images/standing.png";
+import ruku from "../../../images/ruku.png";
+import standStraight from "../../../images/standstraight.png";
+import sujud from "../../../images/sujud.png";
+import sit from "../../../images/sit.png";
 
-  const steps = [
-    { name: 'Preparing', component: 'SalahPreparing'},
-    { name: 'Intention', component: 'SalahIntention'},
-    { name: 'Takbir', component: 'SalahTakbir'},
-    { name: 'Qiyam', component: 'SalahQiyam'},
-    { name: 'Al Fatiha', component: 'SalahAlFatiha'},
-    { name: 'Ruku', component: 'SalahRuku'},
-    { name: 'Stand', component: 'SalahStand'},
-    { name: 'Sujud', component: 'SalahSujud'},
-    { name: 'Quood', component: 'SalahQuood'},
-    { name: 'Sujud', component: 'SalahSujud'},
+function RakatOne({ getImage }) {
+
+  const stepsList = [
+    { name: 'Preparing', component: 'SalahPreparing', image: standStraight},
+    { name: 'Intention', component: 'SalahIntention', image: handsEars},
+    { name: 'Takbir', component: 'SalahTakbir', image: handsEars},
+    { name: 'Qiyam', component: 'SalahQiyam', image: standing},
+    { name: 'Al Fatiha', component: 'SalahAlFatiha', image: standing},
+    { name: 'Ruku', component: 'SalahRuku', image: ruku},
+    { name: 'Stand', component: 'SalahStand', image: standStraight},
+    { name: 'Sujud', component: 'SalahSujud', image: sujud},
+    { name: 'Quood', component: 'SalahQuood', image: sit},
+    { name: 'Sujud (repeat)', component: 'SalahSujud', image: sujud},
   ];
+
+  const [activeComponent, setActiveComponent] = useState('Preparing');
+  const [activeButton, setActiveButton] = useState(stepsList[0].name);
+  const [steps, setSteps] = useState(stepsList);
 
   function renderComponent() {
     switch(activeComponent) {
@@ -50,16 +60,13 @@ function RakatOne() {
     }
   }
 
-  useEffect(() => {
-    setActiveComponent(steps[0].component);
-  },[]);
-
-
   function handleClick(e) {
     const value = e.target.textContent;
 
     steps.map((step) => {
       value === step.name && setActiveComponent(step.component);
+      value === step.name && getImage(step.image);
+      value === step.name && setActiveButton(step.name);
     });
   }
 
@@ -70,7 +77,7 @@ function RakatOne() {
           {steps.map((step, index) => {
             return(
               <li key={index} className="steps-list__item">
-                <button onClick={handleClick} className="steps-list__button">
+              <button onClick={handleClick} className={activeButton === step.name ? "steps-list__button selected" : "steps-list__button"} >
                   {step.name}
                 </button>
               </li>

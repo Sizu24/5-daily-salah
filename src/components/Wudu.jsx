@@ -10,21 +10,30 @@ import WuduHair from "./Wudu/WuduHair";
 import WuduEars from "./Wudu/WuduEars";
 import WuduFeet from "./Wudu/WuduFeet";
 
+import wuduHands from "../images/wuduhands.png";
+import wuduMouth from "../images/wudumouth.png";
+import wuduFace from "../images/wuduface.png";
+import wuduArms from "../images/wuduarms.png";
+import wuduEars from "../images/wuduears.png";
+import wuduHair from "../images/wuduhair.png";
+import wuduFeet from "../images/wudufeet.png";
+
 function Wudu() {
 
   let [activeComponent, setActiveComponent] = useState();
+  const [activeImage, setActiveImage] = useState("../src/images/wudu-image1.png");
   let [activeButton, setActiveButton] = useState();
 
   const steps = [
-    { name: 'Intention', component: 'WuduIntention'},
-    { name: 'Hands', component: 'WuduHands'},
-    { name: 'Mouth', component: 'WuduMouth'},
-    { name: 'Nose', component: 'WuduNose'},
-    { name: 'Face', component: 'WuduFace'},
-    { name: 'Arms', component: 'WuduArms'},
-    { name: 'Hair', component: 'WuduHair'},
-    { name: 'Ears', component: 'WuduEars'},
-    { name: 'Feet', component: 'WuduFeet'},
+    { name: 'Intention', component: 'WuduIntention', image: wuduHands},
+    { name: 'Hands', component: 'WuduHands', image: wuduHands},
+    { name: 'Mouth', component: 'WuduMouth', image: wuduMouth},
+    { name: 'Nose', component: 'WuduNose', image: wuduFace},
+    { name: 'Face', component: 'WuduFace', image: wuduFace},
+    { name: 'Arms', component: 'WuduArms', image: wuduArms},
+    { name: 'Hair', component: 'WuduHair', image: wuduHair},
+    { name: 'Ears', component: 'WuduEars', image: wuduEars},
+    { name: 'Feet', component: 'WuduFeet', image: wuduFeet},
   ];
 
   useEffect(() => {
@@ -61,7 +70,12 @@ function Wudu() {
 
     steps.map((step) => {
       value === step.name && setActiveComponent(step.component);
+      value === step.name && setActiveImage(step.image);
     });
+  }
+
+  function wuduImage(image) {
+    setActiveImage(image);
   }
 
   return (
@@ -89,7 +103,7 @@ function Wudu() {
           </div>
         </div>
         <div className="section-media">
-          <img src="../src/images/wudu-image1.png" alt="" className="section-media__image" />
+          <img src={activeImage} alt="" className="section-media__image" />
         </div>
       </div>
       </div>
