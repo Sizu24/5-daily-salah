@@ -6,9 +6,6 @@ function SalahQiyam() {
       <h3 className="steps-description__title">Qiyam</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">
-          Place your right hand over your left hand below the navel, or on the chest. Women on their chest.
-        </li>
-        <li className="steps-description__item">
           Recite the following:
         </li>
         <li className="steps-description__item">

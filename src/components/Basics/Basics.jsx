@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import BasicsPreparing from "./Basics/BasicsPreparing";
-import BasicsRakat from "./Basics/BasicsRakat";
-import BasicsWudu from "./Basics/BasicsWudu";
-import BasicsPrayers from "./Basics/BasicsPrayers";
-import BasicsDua from "./Basics/BasicsDua";
+import BasicsPreparing from "./BasicsPreparing";
+import BasicsRakat from "./BasicsRakat";
+import BasicsWudu from "./BasicsWudu";
+import BasicsPrayers from "./BasicsPrayers";
+import BasicsDua from "./BasicsDua";
 
 function Basics() {
 
@@ -68,7 +68,7 @@ function Basics() {
 
         <div className="section-content section-content--wide">
             {renderComponent()}
-          <div className="section-media">
+          <div className="section-media section-media--full-width">
             <img src="../src/images/wudu-image1.jpg" alt="" className="section-media__image" />
           </div>
         </div>

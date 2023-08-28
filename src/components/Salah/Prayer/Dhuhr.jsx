@@ -3,8 +3,10 @@ import RakatOne from "../Rakat/RakatOne";
 import RakatTwo from "../Rakat/RakatTwo";
 import RakatThree from "../Rakat/RakatThree";
 import RakatFour from "../Rakat/RakatFour";
+import { useTheme } from "../ThemeContext";
 
 function Dhuhr() {
+  const { prayer } = useTheme();
 
   const rakats = [
     { name: 'rakat 1', component: 'RakatOne'},
@@ -31,11 +33,11 @@ function Dhuhr() {
       case "rakat 1" :
         return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
       case "rakat 3" :
         return <RakatThree lastRakat={false} getImage={salahImage} />;
       case "rakat 4" :
-        return <RakatFour lastRakat={true} getImage={salahImage} />;
+        return <RakatFour lastRakat={true} getImage={salahImage} stand={false} />;
       default:
         return null;
     }
@@ -77,7 +79,7 @@ function Dhuhr() {
           {rakats.map((rakat, index) => {
             return (
               <li key={index} className="section-categories__list-item">
-                <button className={activeButton === rakat.name ? "section-categories__list-button selected" : "section-categories__list-button"} onClick={handleClick}>{rakat.name}</button>
+                <button className={activeButton === rakat.name ? `section-categories__list-button section-categories__list-button--${prayer} selected` : `section-categories__list-button section-categories__list-button--${prayer}`} onClick={handleClick}>{rakat.name}</button>
               </li>
             );
           })}

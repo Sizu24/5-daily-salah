@@ -12,6 +12,30 @@
   border-radius: rem(15px);
   width: 100%;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown--fajr {
+  color: $beige;
+  border: 2px solid $beige;
+}
+
+.dropdown--dhuhr {
+  color: $midnight-blue;
+  border: 2px solid $midnight-blue;
+}
+
+.dropdown--asr {
+  color: $midnight-blue;
+  border: 2px solid $midnight-blue;
+}
+.dropdown--maghrib{
+  color: $beige;
+  border: 2px solid $beige;
+}
+.dropdown--isha {
+  color: $beige;
+  border: 2px solid $beige;
 }
 
 .dropdown__label {
@@ -20,4 +44,23 @@
   font-size: rem(20px);
   font-weight: $fw-semi;
   color: $midnight-blue;
+}
+
+.dropdown__label--fajr {
+  color: $beige;
+}
+
+.dropdown__label--dhuhr {
+  color: $midnight-blue;
+}
+
+.dropdown__label--asr {
+  color: $midnight-blue;
+}
+
+.dropdown__label--maghrib {
+  color: $beige;
+}
+.dropdown__label--isha {
+  color: $beige;
 }

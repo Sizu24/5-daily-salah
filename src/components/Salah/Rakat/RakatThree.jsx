@@ -4,6 +4,7 @@ import SalahRuku from "../SalahRuku";
 import SalahStand from "../SalahStand";
 import SalahSujud from "../SalahSujud";
 import SalahQuood from "../SalahQuood";
+import SalahStandUp from "../SalahStandUp";
 import SalahAtTashahhud from "../SalahAtTashahhud";
 import SalahAsSalahAlanNabiyy from "../SalahAsSalahAlanNabiyy";
 import SalahDua from "../SalahDua";
@@ -18,7 +19,11 @@ import sit from "../../../images/sit.png";
 import sitpoint from "../../../images/sitpoint.png";
 import end from "../../../images/end.png";
 
-function RakatThree({lastRakat, getImage}) {
+import { useTheme } from "../ThemeContext";
+
+function RakatThree({ lastRakat, getImage, stand }) {
+
+  const { prayer } = useTheme();
 
   let stepsList = [
     { name: 'Al Fatiha', component: 'SalahAlFatiha', image: standing},
@@ -27,39 +32,46 @@ function RakatThree({lastRakat, getImage}) {
     { name: 'Sujud', component: 'SalahSujud', image: sujud},
     { name: 'Quood', component: 'SalahQuood', image: sit},
     { name: 'Sujud (repeat)', component: 'SalahSujud', image: sujud},
+    { name: 'Stand Up', component: 'SalahStandUp', image: standing},
     { name: 'At-Tashahhud', component: 'SalahAtTashahuud', image: sitpoint},
     { name: 'As-Salah alan nabiyy', component: 'SalahAsSalahAlanNabiyy', image: sit},
     { name: 'Dua', component: 'SalahDua', image: sit},
     { name: 'End', component: 'SalahEnd', image: end},
   ];
 
-  const [activeComponent, setActiveComponent] = useState('Preparing');
+  const [activeComponent, setActiveComponent] = useState('Al Fatiha');
   const [activeButton, setActiveButton] = useState(stepsList[0].name);
 
   const [steps, setSteps] = useState(stepsList);
 
   function renderComponent() {
-    switch(activeComponent) {
-      case 'SalahAlFatiha':
-        return <SalahAlFatiha />;
-      case 'SalahRuku':
-        return <SalahRuku />;
-      case 'SalahStand':
-        return <SalahStand />;
-      case 'SalahSujud':
-        return <SalahSujud />;
-      case 'SalahQuood':
-        return <SalahQuood />;
-      case 'SalahAtTashahuud':
-        return <SalahAtTashahhud />;
-      case 'SalahAsSalahAlanNabiyy':
-        return <SalahAsSalahAlanNabiyy />;
-      case 'SalahDua':
-        return <SalahDua />;
-      case 'SalahEnd':
-        return <SalahEnd />;
-      default:
-        return null;
+    if (activeComponent === 'SalahStandUp' && stand === false) {
+      return <SalahStandUp />
+    } else {
+      switch(activeComponent) {
+        case 'SalahAlFatiha':
+          return <SalahAlFatiha />;
+        case 'SalahRuku':
+          return <SalahRuku />;
+        case 'SalahStand':
+          return <SalahStand />;
+        case 'SalahSujud':
+          return <SalahSujud />;
+        case 'SalahQuood':
+          return <SalahQuood />;
+        case 'SalahStandUp':
+          return <SalahStandUp />;
+        case 'SalahAtTashahuud':
+          return <SalahAtTashahhud />;
+        case 'SalahAsSalahAlanNabiyy':
+          return <SalahAsSalahAlanNabiyy />;
+        case 'SalahDua':
+          return <SalahDua />;
+        case 'SalahEnd':
+          return <SalahEnd />;
+        default:
+          return null;
+      }
     }
   }
 
@@ -68,15 +80,8 @@ function RakatThree({lastRakat, getImage}) {
     createSteps();
   },[]);
 
-  function checkIfLastRakat() {
-    if (lastRakat === true) {
-      return true;
-    }
-  }
-
   function createSteps() {
-    const isLast = checkIfLastRakat();
-    if (isLast) {
+    if (lastRakat) {
       setSteps(stepsList);
     } else {
       setSteps(stepsList.slice(0, -4));
@@ -94,21 +99,23 @@ function RakatThree({lastRakat, getImage}) {
     });
   }
 
-  return(
+  return (
     <>
       <div className="steps js-steps-list">
         <ul className="steps-list">
-          {steps.map((step, index) => {
-            return(
+          {steps.map((step, index) => 
+            stand === false && step.name === "Stand Up" ? null : ( 
               <li key={index} className="steps-list__item">
-                <button onClick={handleClick} className={activeButton === step.name ? "steps-list__button selected" : "steps-list__button"} >
+              <button onClick={handleClick} className={activeButton === step.name ? `steps-list__button steps-list__button--${prayer} selected` : `steps-list__button steps-list__button--${prayer}`} >
                   {step.name}
                 </button>
               </li>
-            );
-          })}
+            )
+          )}
         </ul>
-        {renderComponent()}
+        <div className={`steps-description__container--${prayer}`}>
+          {renderComponent()}
+        </div>
       </div>
     </>
   );

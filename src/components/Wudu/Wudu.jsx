@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
 
-import WuduIntention from "./Wudu/WuduIntention";
-import WuduHands from "./Wudu/WuduHands";
-import WuduMouth from "./Wudu/WuduMouth";
-import WuduNose from "./Wudu/WuduNose";
-import WuduFace from "./Wudu/WuduFace";
-import WuduArms from "./Wudu/WuduArms";
-import WuduHair from "./Wudu/WuduHair";
-import WuduEars from "./Wudu/WuduEars";
-import WuduFeet from "./Wudu/WuduFeet";
+import WuduIntention from "./WuduIntention";
+import WuduHands from "./WuduHands";
+import WuduMouth from "./WuduMouth";
+import WuduNose from "./WuduNose";
+import WuduFace from "./WuduFace";
+import WuduArms from "./WuduArms";
+import WuduHair from "./WuduHair";
+import WuduEars from "./WuduEars";
+import WuduFeet from "./WuduFeet";
 
-import wuduHands from "../images/wuduhands.png";
-import wuduMouth from "../images/wudumouth.png";
-import wuduFace from "../images/wuduface.png";
-import wuduArms from "../images/wuduarms.png";
-import wuduEars from "../images/wuduears.png";
-import wuduHair from "../images/wuduhair.png";
-import wuduFeet from "../images/wudufeet.png";
+import wuduHands from "../../images/wuduhands.png";
+import wuduMouth from "../../images/wudumouth.png";
+import wuduFace from "../../images/wuduface.png";
+import wuduArms from "../../images/wuduarms.png";
+import wuduEars from "../../images/wuduears.png";
+import wuduHair from "../../images/wuduhair.png";
+import wuduFeet from "../../images/wudufeet.png";
 
 function Wudu() {
 
-  let [activeComponent, setActiveComponent] = useState();
+  const [activeComponent, setActiveComponent] = useState('WuduIntention');
   const [activeImage, setActiveImage] = useState(wuduHands);
-  let [activeButton, setActiveButton] = useState();
+  const [activeButton, setActiveButton] = useState('Intention');
+  
 
   const steps = [
     { name: 'Intention', component: 'WuduIntention', image: wuduHands},
@@ -71,11 +72,8 @@ function Wudu() {
     steps.map((step) => {
       value === step.name && setActiveComponent(step.component);
       value === step.name && setActiveImage(step.image);
+      value === step.name && setActiveButton(step.name);
     });
-  }
-
-  function wuduImage(image) {
-    setActiveImage(image);
   }
 
   return (
@@ -92,7 +90,7 @@ function Wudu() {
               {steps.map((step, index) => {
                 return(
                   <li key={index} className="steps-list__item steps-list__item--dark">
-                    <button onClick={handleClick} className="steps-list__button">
+                    <button onClick={handleClick} className={activeButton === step.name ? "steps-list__button selected" : "steps-list__button"}>
                       {step.name}
                     </button>
                   </li>

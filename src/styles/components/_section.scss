@@ -47,9 +47,38 @@
   }
 }
 
+.section-categories__list-button--fajr,
+.section-categories__list-button--maghrib,
+.section-categories__list-button--isha
+ {
+  color: $beige;
+}
+
+.section-categories__list-button--dhuhr,
+.section-categories__list-button--asr {
+  color: $midnight-blue;
+}
+
 .section-categories__list-button.selected {
   color: $light;
   background-color: $midnight-blue;
+}
+
+.section-categories__list-button--fajr.selected,
+.section-categories__list-button--maghrib.selected,
+.section-categories__list-button--isha.selected
+ {
+  color: $midnight-blue;
+  background-color: $light;
+  border: 2px solid $midnight-blue;
+}
+
+.section-categories__list-button--dhuhr.selected,
+.section-categories__list-button--asr.selected 
+ {
+  color: $beige;
+  background-color: $midnight-blue;
+  border: 2px solid $beige;
 }
 
 .section-content {
@@ -82,6 +111,17 @@
   }
 }
 
+.section__title--fajr,
+.section__title--maghrib,
+.section__title--isha {
+  color: $beige;
+}
+
+.section__title--dhuhr,
+.section__title--asr {
+  color: $midnight-blue;
+}
+
 .section__title--dark {
   color: $light;
 }
@@ -95,6 +135,17 @@
   @include size($lg) {
     font-size: rem(16px);
   }  
+}
+
+.section__subhead--fajr,
+.section__subhead--maghrib,
+.section__subhead--isha {
+  color: $beige;
+}
+
+.section__subhead--dhuhr,
+.section__subhead--asr {
+  color: $midnight-blue;
 }
 
 .section__subhead--dark {
@@ -136,6 +187,10 @@
     margin-left: 30%;
     max-width: 25%;
   }  
+}
+
+.section-media--full-width {
+  max-width: 100%;
 }
 
 .section-media__image {

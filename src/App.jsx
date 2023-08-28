@@ -1,16 +1,18 @@
 import React from "react";
 import "./styles/styles.scss";
 import Header from "./layout/Header";
-import Hero from "./components/Hero";
-import Wudu from "./components/Wudu";
-import Salah from "./components/Salah";
-import Info from "./components/Info";
+import Hero from "./layout/Hero/";
+import Wudu from "./components/Wudu/Wudu";
+import Salah from "./components/Salah/Salah";
+import Info from "./components/Info/Info";
 import Footer from "./layout/Footer";
-import Basics from "./components/Basics";
+import Basics from "./components/Basics/Basics";
+
+import { ThemeProvider } from "./components/Salah/ThemeContext";
 
 function App() {
   return (
-  <>
+  <ThemeProvider>
     <Header />
     <main>
       <Hero />
@@ -20,7 +22,7 @@ function App() {
       <Info />
     </main>
     <Footer />
-  </>
+  </ThemeProvider>
   );
 }
 

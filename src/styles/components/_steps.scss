@@ -9,6 +9,10 @@
   }  
 }
 
+.steps--wide {
+  width: rem(500px);
+}
+
 .steps-list {
   padding: 0;
   list-style: none;
@@ -46,7 +50,33 @@
   }
 }
 
+.steps-list__button--fajr, 
+.steps-list__button--maghrib, 
+.steps-list__button--isha {
+  color: $beige;
+  border: 2px solid $beige;
+}
+
+.steps-list__button--dhuhr, 
+.steps-list__button--asr {
+  color: $midnight-blue;
+  border: 2px solid $midnight-blue;
+}
+
 .steps-list__button.selected {
+  color: $light;
+  background-color: $midnight-blue;
+}
+
+.steps-list__button--fajr.selected,
+.steps-list__button--maghrib.selected,
+.steps-list__button--isha.selected {
+  color: $midnight-blue;
+  background-color: $light;
+}
+
+.steps-list__button--dhuhr.selected,
+.steps-list__button--asr.selected {
   color: $light;
   background-color: $midnight-blue;
 }
@@ -57,8 +87,32 @@
 
   @include size($xl) {
     position: absolute;
-    left: 175%;
+    left: 125%;
   }    
+}
+
+.steps-description__container--fajr,
+.steps-description__container--maghrib,
+.steps-description__container--isha
+ {
+  .steps-description__title {
+    color: $beige;
+  }
+
+  .steps-description__body {
+    color: $beige;
+  }
+}
+
+.steps-description__container--dhuhr,
+.steps-description__container--asr {
+  .steps-description__title {
+    color: $midnight-blue;
+  }
+
+  .steps-description__body {
+    color: $midnight-blue;
+  }
 }
 
 .steps-description__title {

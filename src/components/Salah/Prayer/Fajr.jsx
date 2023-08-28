@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import RakatOne from "../Rakat/RakatOne";
 import RakatTwo from "../Rakat/RakatTwo";
+import { useTheme } from "../ThemeContext";
 
 function Fajr() {
 
+  const { prayer } = useTheme();
   const rakats = [
     { name: 'rakat 1', component: 'RakatOne'},
     { name: 'rakat 2', component: 'RakatTwo'},
@@ -26,7 +28,7 @@ function Fajr() {
       case "rakat 1" :
         return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={true} getImage={salahImage} />;
+        return <RakatTwo lastRakat={true} getImage={salahImage} stand={false}/>;
       default:
         return null;
     }
@@ -43,7 +45,7 @@ function Fajr() {
           {rakats.map((rakat, index) => {
             return (
               <li key={index} className="section-categories__list-item">
-                <button className={activeButton === rakat.name ? "section-categories__list-button selected" : "section-categories__list-button"} onClick={handleClick}>{rakat.name}</button>
+                <button className={activeButton === rakat.name ? `section-categories__list-button section-categories__list-button--${prayer} selected` : `section-categories__list-button section-categories__list-button--${prayer}`} onClick={handleClick}>{rakat.name}</button>
               </li>
             );
           })}
