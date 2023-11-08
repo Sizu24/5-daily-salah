@@ -6,7 +6,7 @@ function SalahAlFatiha() {
       <h3 className="steps-description__title">Al-Fatiha (1st surah of the Quran)</h3>
       <ol className="steps-description__body">
         <li className="steps-description__item">
-          While still standing, recite surah Al-Fatiha:
+          While standing, recite surah Al-Fatiha:
         </li>
         <li className="steps-description__item">
           <strong>"Bismillahir rahmanir rahim"</strong>

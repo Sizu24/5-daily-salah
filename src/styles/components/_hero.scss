@@ -47,7 +47,7 @@
   font-family: $ff-main;
   font-weight: $fw-extra;
   font-size: rem(48px);
-  color: $beige;
+  color: $light;
 
   @include size($md) {
     font-size: rem(144px);
@@ -59,7 +59,7 @@
   font-family: $ff-main;
   font-weight: $fw-semi;
   font-size: rem(16px);
-  color: $beige;
+  color: $light;
 
   @include size($md) {
     font-size: rem(20px);
@@ -72,7 +72,7 @@
   background-color: $sky-blue;
   font-family: $ff-main;
   font-size: rem(16px);
-  color: $beige;
+  color: $light;
   border: 2px solid $sky-blue;
   text-decoration: none;
   border-radius: rem(50px);

@@ -1,16 +1,14 @@
-import React, { createContextuseState } from "react";
+import React, { createContext, useState } from "react";
 import Fajr from "./Prayer/Fajr";
 import Dhuhr from "./Prayer/Dhuhr";
 import Asr from "./Prayer/Asr";
 import Maghrib from "./Prayer/Maghrib";
 import Isha from "./Prayer/Isha";
-
 import { useTheme } from "./ThemeContext";
 
 function Salah() {
 
   const { prayer, setPrayer } = useTheme();
-
 
   function showPrayer() {
     switch(prayer) {

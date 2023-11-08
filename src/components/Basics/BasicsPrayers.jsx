@@ -6,7 +6,7 @@ function BasicsPrayers() {
 
   const prayers = [
     {name: 'Fajr', description: 'This is the morning prayer, which has TWO rakats.'},
-    {name: 'Dhur', description:'This is the afternoon prayer, which has FOUR rakats.'},
+    {name: 'Dhuhr', description:'This is the afternoon prayer, which has FOUR rakats.'},
     {name: 'Asr', description:'This is the mid-day prayer, which has FOUR rakats.'},
     {name: 'Maghrib', description:'This is the evening prayer, which has THREE rakats.'},
     {name: 'Isha', description:' This is the night prayer, which has FOUR rakats.'},

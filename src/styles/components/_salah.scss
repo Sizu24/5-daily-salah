@@ -1,24 +1,19 @@
 .salah--fajr {
-  background-image: linear-gradient(to bottom, #13206f, #0c2168, #082161, #06215a, #072152, #231c48, #2d183d, #321533, #391122, #361314, #2f1807, #251b04);
-  transition: background-image .2s ease-in-out;
+  background: linear-gradient(to bottom, #13206f, #0c2168, #082161, #06215a, #072152, #231c48, #2d183d, #321533, #391122, #361314, #2f1807, #251b04);
 }
 
 .salah--dhuhr {
   background: linear-gradient(180deg, hsla(69, 100%, 95%, 1) 0%, hsla(69, 100%, 95%, 1) 20%, hsla(88, 70%, 95%, 1) 44%, hsla(129, 42%, 94%, 1) 63%, hsla(183, 40%, 90%, 1) 78%, hsla(195, 56%, 89%, 1) 85%, hsla(204, 79%, 87%, 1) 100%);
-  transition: background-image .2s ease-in-out;
 }
 
 .salah--asr {
   background: linear-gradient(0deg, hsla(47, 63%, 87%, 1) 0%, hsla(48, 64%, 89%, 1) 10%, hsla(50, 68%, 91%, 1) 25%, hsla(55, 74%, 94%, 1) 42%, hsla(64, 100%, 97%, 1) 83%);
-  transition: background-image .2s ease-in-out;
 }
 
 .salah--maghrib {
   background: linear-gradient(180deg, hsla(223, 59%, 24%, 1) 21%, hsla(222, 48%, 28%, 1) 55%, hsla(222, 39%, 31%, 1) 67%, hsla(221, 26%, 39%, 1) 77%, hsla(221, 15%, 48%, 1) 85%, hsla(214, 8%, 65%, 1) 99%, hsla(50, 68%, 93%, 1) 100%);
-  transition: background-image .2s ease-in-out;
 }
 
 .salah--isha {
-  background-color: #192E61;
-  transition: background-color .2s ease-in-out;
+  background: #192E61;
 }
