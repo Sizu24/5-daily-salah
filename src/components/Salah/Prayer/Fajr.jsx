@@ -34,6 +34,15 @@ function Fajr() {
     }
   }
 
+  /**
+
+    fajr: 2 last
+    Dhuhr: 4 last
+    Asr: 4 last
+    Maghrib: 3 last
+    Isha: 4 last
+   */
+
   function salahImage(image) {
     setActiveImage(image);
   }
@@ -51,7 +60,6 @@ function Fajr() {
           })}
         </ul>
       </div>
-
 
       <div className="section-content">
         <div className="salah-text">
