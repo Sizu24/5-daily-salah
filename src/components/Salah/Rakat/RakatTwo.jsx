@@ -32,8 +32,8 @@ function RakatTwo({ lastRakat, getImage, stand }) {
     { name: 'Sujud', component: 'SalahSujud', image: sujud},
     { name: 'Quood', component: 'SalahQuood', image: sit},
     { name: 'Sujud (repeat)', component: 'SalahSujud', image: sujud},
-    { name: 'Stand Up', component: 'SalahStandUp', image: standing},
     { name: 'At-Tashahhud', component: 'SalahAtTashahuud', image: sitpoint},
+    { name: 'Stand Up', component: 'SalahStandUp', image: standing},
     { name: 'As-Salah alan nabiyy', component: 'SalahAsSalahAlanNabiyy', image: sit},
     { name: 'Dua', component: 'SalahDua', image: sit},
     { name: 'End', component: 'SalahEnd', image: end},
@@ -72,17 +72,16 @@ function RakatTwo({ lastRakat, getImage, stand }) {
     }
   }
 
+  // if last rakat --- false, show stand up
+    // else show as salah alan nabiyy, dua, and end. Do not show stand up
+
   useEffect(() => {
     setActiveComponent(steps[0].component);
     createSteps();
   },[]);
 
   function createSteps() {
-    if (lastRakat) {
-      setSteps(stepsList);
-    } else {
-      setSteps(stepsList.slice(0, -3));
-    }
+    setSteps(stepsList);
   }
 
 
@@ -100,7 +99,9 @@ function RakatTwo({ lastRakat, getImage, stand }) {
       <div className="steps js-steps-list">
         <ul className="steps-list">
           {steps.map((step, index) => 
-            stand === false && step.name === "Stand Up" ? null : ( 
+            (lastRakat === true && stand === false && step.name === "Stand Up") ||
+            (lastRakat === false && stand === true ["As-Salah alan nabiyy", "Dua", "End"].includes(step.name)) ? null 
+            : ( 
               <li key={index} className="steps-list__item">
                 <button onClick={handleClick} className={activeButton === step.name ? `steps-list__button steps-list__button--${prayer} selected` : `steps-list__button steps-list__button--${prayer}`} >
                   {step.name}
