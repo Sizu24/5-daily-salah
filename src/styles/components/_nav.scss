@@ -16,12 +16,21 @@
 }
 
 .nav-list__item {
-  padding: rem(25px);
-  color: $beige;
+  margin: rem(5px 10px);
+  padding: rem(15px 25px);
+  color: $light;
+  transition: all .2s ease-in-out;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
 
   a {
-    color: $beige;
+    color: $light;
+    font-weight: $fw-med;
     text-decoration: none;
-    cursor: pointer;
+  }
+
+  &:hover {
+    border: 2px solid $light;
   }
 }

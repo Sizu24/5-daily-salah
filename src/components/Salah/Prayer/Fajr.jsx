@@ -34,6 +34,14 @@ function Fajr() {
     }
   }
 
+  /**
+    fajr: 2 last
+    Dhuhr: 4 last
+    Asr: 4 last
+    Maghrib: 3 last
+    Isha: 4 last
+   */
+
   function salahImage(image) {
     setActiveImage(image);
   }
@@ -42,16 +50,13 @@ function Fajr() {
     <>
       <div className="section-categories">
         <ul className="section-categories__list">
-          {rakats.map((rakat, index) => {
-            return (
-              <li key={index} className="section-categories__list-item">
-                <button className={activeButton === rakat.name ? `section-categories__list-button section-categories__list-button--${prayer} selected` : `section-categories__list-button section-categories__list-button--${prayer}`} onClick={handleClick}>{rakat.name}</button>
-              </li>
-            );
-          })}
+          {rakats.map((rakat) => (
+            <li key={rakat.name} className="section-categories__list-item">
+              <button className={activeButton === rakat.name ? `section-categories__list-button section-categories__list-button--${prayer} selected` : `section-categories__list-button section-categories__list-button--${prayer}`} onClick={handleClick}>{rakat.name}</button>
+            </li>
+          ))}
         </ul>
       </div>
-
 
       <div className="section-content">
         <div className="salah-text">

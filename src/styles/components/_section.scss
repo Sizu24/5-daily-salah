@@ -37,7 +37,6 @@
   border: 2px solid $midnight-blue;
   border-radius: rem(25px);
   cursor: pointer;
-  box-shadow: rem(5px 5px 10px) rgba(0, 0, 0, 0.25);
   transition: all .2s ease-in-out;
 
 
@@ -45,6 +44,10 @@
     color: $light;
     background-color: $midnight-blue;
   }
+}
+
+.section-categories__list-button.selected {
+  box-shadow: rem(5px 5px 10px) rgba(0, 0, 0, 0.25);
 }
 
 .section-categories__list-button--fajr,
