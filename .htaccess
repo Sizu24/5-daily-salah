@@ -1,9 +1,1 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Redirect non-existent files and directories to dist/index.html
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /dist/index.html [L]
-</IfModule>
+DirectoryIndex ./dist/index.html
