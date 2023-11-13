@@ -31,7 +31,7 @@ function Maghrib() {
       case "rakat 1" :
         return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={true} />;
       case "rakat 3" :
         return <RakatThree lastRakat={true} getImage={salahImage} stand={false} />;
       default:

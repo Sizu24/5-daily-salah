@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import RakatOne from "../Rakat/RakatOne";
 import RakatTwo from "../Rakat/RakatTwo";
 import RakatThree from "../Rakat/RakatThree";
@@ -30,9 +30,9 @@ function Asr() {
   function showRakat() {
     switch(rakat) {
       case "rakat 1" :
-        return <RakatOne />;
+        return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={true} />;
       case "rakat 3" :
         return <RakatThree lastRakat={false} getImage={salahImage} />;
       case "rakat 4" :

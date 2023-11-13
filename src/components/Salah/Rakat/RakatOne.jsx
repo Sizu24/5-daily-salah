@@ -34,7 +34,7 @@ function RakatOne({ getImage }) {
     { name: 'Sujud', component: 'SalahSujud', image: sujud},
     { name: 'Quood', component: 'SalahQuood', image: sit},
     { name: 'Sujud (repeat)', component: 'SalahSujud', image: sujud},
-    // { name: 'Stand Up', component: 'SalahStandUp', image: standing},
+    { name: 'Stand Up', component: 'SalahStandUp', image: standing},
   ];
 
   const [activeComponent, setActiveComponent] = useState('SalahPreparing');

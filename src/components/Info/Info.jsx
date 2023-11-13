@@ -9,6 +9,7 @@ function Info() {
         <h3 className="section__subhead">
           This section covers any additonal info, including the ability to ask questions.
         </h3>
+        <h4 className="section__subhead">(Coming Soon)</h4>
       </div>
     </div>
   );
