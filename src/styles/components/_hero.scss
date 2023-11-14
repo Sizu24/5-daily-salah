@@ -4,12 +4,13 @@
   &:after {
     position: absolute;
     content: "";
-    bottom: -20px;
+    bottom: 0;
     left: 0;
     height: rem(293px);
     width: 100%;
-    background-image: url('../src/images/curves.svg');
+    background-image: url('/src/images/curves.svg');
     background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -17,7 +18,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: url('../src/images/hero-bg.jpg');
+  background: url('/src/images/hero-bg.jpg');
   background-size: cover;
   background-position: 70%;
   background-repeat: no-repeat;

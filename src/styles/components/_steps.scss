@@ -10,7 +10,10 @@
 }
 
 .steps--wide {
-  width: rem(500px);
+  
+  @include size($xl) {
+    width: rem(500px);
+  }  
 }
 
 .steps-list {
