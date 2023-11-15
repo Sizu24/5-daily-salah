@@ -12,6 +12,10 @@
     background-image: url('/src/images/curves.svg');
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include size($xl) {
+      height: rem(600px);
+    }
   }
 }
 
