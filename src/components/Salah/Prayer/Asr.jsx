@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import RakatOne from "../Rakat/RakatOne";
 import RakatTwo from "../Rakat/RakatTwo";
 import RakatThree from "../Rakat/RakatThree";
 import RakatFour from "../Rakat/RakatFour";
 import { useTheme } from "../ThemeContext";
+
+import standStraight from "../../../images/standstraight.png";
 
 function Asr() {
   const { prayer } = useTheme();
@@ -17,7 +19,7 @@ function Asr() {
 
   const [rakat, setRakat] = useState(rakats[0].name);
   const [activeButton, setActiveButton] = useState(rakats[0].name);
-  const [activeImage, setActiveImage] = useState("../src/images/standstraight.png");
+  const [activeImage, setActiveImage] = useState(standStraight);
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -30,9 +32,9 @@ function Asr() {
   function showRakat() {
     switch(rakat) {
       case "rakat 1" :
-        return <RakatOne />;
+        return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={true} />;
       case "rakat 3" :
         return <RakatThree lastRakat={false} getImage={salahImage} />;
       case "rakat 4" :

@@ -17,6 +17,9 @@ function SalahEnd() {
         <li className="steps-description__item">
           <strong>"Assalamu Alaikum Wa Rahmatullah"</strong>
         </li>
+        <li className="steps-description__item">
+          This completes the prayer, and you can now perform your own Dua.
+        </li>
       </ol>
     </div>
   );

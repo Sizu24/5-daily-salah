@@ -1,5 +1,6 @@
 .basics {
   position: relative;
+  overflow: hidden;
   
   &:after {
     position: absolute;
@@ -8,8 +9,7 @@
     left: 0;
     width: rem(1982px);
     height: rem(80px);
-    background-image: url('../src/images/wudu-curve.svg');
-    background-size: cover;
+    background-image: url('/src/images/wudu-curve.svg');
     background-repeat: no-repeat;
   }
 }

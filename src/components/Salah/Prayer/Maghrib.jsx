@@ -4,6 +4,8 @@ import RakatTwo from "../Rakat/RakatTwo";
 import RakatThree from "../Rakat/RakatThree";
 import { useTheme } from "../ThemeContext";
 
+import standStraight from "../../../images/standstraight.png";
+
 function Maghrib() {
     const { prayer } = useTheme();
 
@@ -15,7 +17,7 @@ function Maghrib() {
 
   const [rakat, setRakat] = useState(rakats[0].name);
   const [activeButton, setActiveButton] = useState(rakats[0].name);
-  const [activeImage, setActiveImage] = useState("../src/images/standstraight.png");
+  const [activeImage, setActiveImage] = useState(standStraight);
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -31,7 +33,7 @@ function Maghrib() {
       case "rakat 1" :
         return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={true} />;
       case "rakat 3" :
         return <RakatThree lastRakat={true} getImage={salahImage} stand={false} />;
       default:

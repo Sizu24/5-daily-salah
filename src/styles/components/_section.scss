@@ -20,6 +20,10 @@
   flex-direction: row;
   list-style: none;
   overflow-x: scroll;
+
+  @include size($lg) {
+    overflow: auto;
+  }
 }
 
 .section-categories__list-item {

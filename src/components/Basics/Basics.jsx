@@ -6,6 +6,8 @@ import BasicsWudu from "./BasicsWudu";
 import BasicsPrayers from "./BasicsPrayers";
 import BasicsDua from "./BasicsDua";
 
+import wuduImage from "../../images/wudu-image1.jpg";
+
 function Basics() {
 
   const categories = [
@@ -69,7 +71,7 @@ function Basics() {
         <div className="section-content section-content--wide">
             {renderComponent()}
           <div className="section-media section-media--full-width">
-            <img src="../src/images/wudu-image1.jpg" alt="" className="section-media__image" />
+            <img src={wuduImage} alt="" className="section-media__image" />
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ import RakatThree from "../Rakat/RakatThree";
 import RakatFour from "../Rakat/RakatFour";
 import { useTheme } from "../ThemeContext";
 
+import standStraight from "../../../images/standstraight.png";
+
 function Dhuhr() {
   const { prayer } = useTheme();
 
@@ -17,7 +19,7 @@ function Dhuhr() {
 
   const [rakat, setRakat] = useState(rakats[0].name);
   const [activeButton, setActiveButton] = useState(rakats[0].name);
-  const [activeImage, setActiveImage] = useState("../src/images/standstraight.png");
+  const [activeImage, setActiveImage] = useState(standStraight);
 
   function handleClick(e) {
     const value = e.target.textContent;

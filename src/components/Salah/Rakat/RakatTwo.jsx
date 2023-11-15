@@ -60,6 +60,8 @@ function RakatTwo({ lastRakat, getImage, stand }) {
           return <SalahQuood />;
         case 'SalahAtTashahuud':
           return <SalahAtTashahhud />;
+        case 'SalahStandUp':
+          return <SalahStandUp />;
         case 'SalahAsSalahAlanNabiyy':
           return <SalahAsSalahAlanNabiyy />;
         case 'SalahDua':
@@ -100,7 +102,7 @@ function RakatTwo({ lastRakat, getImage, stand }) {
         <ul className="steps-list">
           {steps.map((step, index) => 
             (lastRakat === true && stand === false && step.name === "Stand Up") ||
-            (lastRakat === false && stand === true ["As-Salah alan nabiyy", "Dua", "End"].includes(step.name)) ? null 
+            (lastRakat === false && stand === true && ["As-Salah alan nabiyy", "Dua", "End"].includes(step.name)) ? null 
             : ( 
               <li key={index} className="steps-list__item">
                 <button onClick={handleClick} className={activeButton === step.name ? `steps-list__button steps-list__button--${prayer} selected` : `steps-list__button steps-list__button--${prayer}`} >

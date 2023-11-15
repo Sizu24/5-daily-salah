@@ -5,6 +5,8 @@ import RakatThree from "../Rakat/RakatThree";
 import RakatFour from "../Rakat/RakatFour";
 import { useTheme } from "../ThemeContext";
 
+import standStraight from "../../../images/standstraight.png";
+
 function Isha() {
   const { prayer } = useTheme();
 
@@ -17,7 +19,7 @@ function Isha() {
 
   const [rakat, setRakat] = useState(rakats[0].name);
   const [activeButton, setActiveButton] = useState(rakats[0].name);
-  const [activeImage, setActiveImage] = useState("../src/images/standstraight.png");
+  const [activeImage, setActiveImage] = useState(standStraight);
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -32,7 +34,7 @@ function Isha() {
       case "rakat 1" :
         return <RakatOne getImage={salahImage} />;
       case "rakat 2" :
-        return <RakatTwo lastRakat={false} getImage={salahImage} stand={false} />;
+        return <RakatTwo lastRakat={false} getImage={salahImage} stand={true} />;
       case "rakat 3" :
         return <RakatThree lastRakat={false} getImage={salahImage} />;
       case "rakat 4" :
