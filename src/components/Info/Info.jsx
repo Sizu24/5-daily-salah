@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Chat from "../Chat/Chat";
 
 function Info() {
 
@@ -10,6 +11,7 @@ function Info() {
           This section covers any additonal info, including the ability to ask questions.
         </h3>
         <h4 className="section__subhead">(Coming Soon)</h4>
+        <Chat />
       </div>
     </div>
   );

@@ -8,6 +8,9 @@ function WuduEars() {
         <li className="steps-description__item">
           Then take your thumb and fingers, and run them through the grooves of your ears, making sure to clean behind them too.
         </li>
+        <li className="steps-description__item">
+          Now run the back of your wet hands down the back of your neck, starting from the middle towards the front
+        </li>
       </ol>
     </div>
   );

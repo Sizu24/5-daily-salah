@@ -7,13 +7,13 @@
     content: "";
     bottom: 0;
     left: 0;
-    height: rem(293px);
+    height: rem(280px);
     width: 100%;
     background-image: url('/src/images/curves.svg');
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include size($xl) {
+    @include size($xxl) {
       height: rem(600px);
     }
   }
