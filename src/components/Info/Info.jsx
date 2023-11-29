@@ -11,7 +11,7 @@ function Info() {
           This section covers any additonal info, including the ability to ask questions.
         </h3>
         <h4 className="section__subhead">(Coming Soon)</h4>
-        <Chat />
+        {/* <Chat /> */}
       </div>
     </div>
   );

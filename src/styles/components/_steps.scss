@@ -1,11 +1,12 @@
 .steps {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: rem(50px);
 
   @include size($xl) {
     position: absolute;
     left: 0;
+    flex-direction: row;
   }  
 }
 
@@ -17,9 +18,18 @@
 }
 
 .steps-list {
+  display: flex;
+  overflow: scroll;
+  gap: 20px;
   padding: 0;
   list-style: none;
   word-break: normal;
+
+  @include size($xl) {
+    flex-direction: column;
+    overflow: auto;
+    gap: 0;
+  }  
 }
 
 .steps-list__item {
