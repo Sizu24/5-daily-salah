@@ -9,6 +9,7 @@ import SalahAtTashahhud from "../SalahAtTashahhud";
 import SalahAsSalahAlanNabiyy from "../SalahAsSalahAlanNabiyy";
 import SalahDua from "../SalahDua";
 import SalahEnd from "../SalahEnd";
+import Translate from "../Translate";
 
 import handsEars from "../../../images/handsears.png";
 import standing from "../../../images/standing.png";
@@ -112,6 +113,7 @@ function RakatTwo({ lastRakat, getImage, stand }) {
             )
           )}
         </ul>
+        <Translate prayer={prayer}/>
         <div className={`steps-description__container--${prayer}`}>
           {renderComponent()}
         </div>

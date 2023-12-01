@@ -108,6 +108,7 @@
 .steps-description__container--maghrib,
 .steps-description__container--isha
  {
+  margin-top: rem(16px);
   .steps-description__title {
     color: $beige;
   }
@@ -119,6 +120,7 @@
 
 .steps-description__container--dhuhr,
 .steps-description__container--asr {
+  margin-top: rem(16px);
   .steps-description__title {
     color: $midnight-blue;
   }

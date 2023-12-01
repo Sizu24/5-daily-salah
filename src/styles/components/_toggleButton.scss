@@ -1,0 +1,27 @@
+.toggle-button {
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: $ocean-blue;
+  box-shadow: inset 3px 10px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.toggle-button--on {
+    background-color: $navy-blue;
+  .toggle-button__handle {
+    transform: translateX(30px);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.toggle-button__handle {
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.25);
+  background-color: $light;
+  transition: all .2s ease-in-out;
+}
+

@@ -9,6 +9,7 @@ import SalahStand from "../SalahStand";
 import SalahSujud from "../SalahSujud";
 import SalahQuood from "../SalahQuood";
 import SalahStandUp from "../SalahStandUp";
+import Translate from "../Translate";
 
 import handsEars from "../../../images/handsears.png";
 import standing from "../../../images/standing.png";
@@ -93,6 +94,7 @@ function RakatOne({ getImage }) {
           })}
         </ul>
         <div className={`steps-description__container--${prayer}`}>
+          <Translate prayer={prayer}/>
           {renderComponent()}
         </div>
       </div>

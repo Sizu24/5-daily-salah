@@ -1,0 +1,24 @@
+.translate {
+  padding: rem(20px 0);
+
+  @include size($xl) {
+    position: absolute;
+    right: -520px;
+    top: -20px;
+  }
+}
+
+.translate__title {
+  font-family: $ff-main;
+}
+
+.translate__title--duhr,
+.translate__title--asr  {
+  color: $midnight-blue;
+}
+
+.translate__title--fajr,
+.translate__title--maghrib,
+.translate__title--isha {
+  color: $beige;
+}
