@@ -41,6 +41,7 @@ function RakatOne({ getImage }) {
   const [activeComponent, setActiveComponent] = useState('SalahPreparing');
   const [activeButton, setActiveButton] = useState(stepsList[0].name);
   const [steps, setSteps] = useState(stepsList);
+  const [translate, setTranslate] = useState(false);
 
   function renderComponent() {
     switch(activeComponent) {
@@ -49,24 +50,29 @@ function RakatOne({ getImage }) {
       case 'SalahIntention':
         return <SalahIntention />;
       case 'SalahTakbir': 
-        return <SalahTakbir />;
+        return <SalahTakbir showEnglish={translate} />;
       case 'SalahQiyam':
-        return <SalahQiyam />;
+        return <SalahQiyam showEnglish={translate} />;
       case 'SalahAlFatiha':
-        return <SalahAlFatiha />;
+        return <SalahAlFatiha showEnglish={translate} />;
       case 'SalahRuku':
-        return <SalahRuku />;
+        return <SalahRuku showEnglish={translate} />;
       case 'SalahStand':
-        return <SalahStand />;
+        return <SalahStand showEnglish={translate} />;
       case 'SalahSujud':
-        return <SalahSujud />;
+        return <SalahSujud showEnglish={translate} />;
       case 'SalahQuood':
-        return <SalahQuood />;
+        return <SalahQuood showEnglish={translate} />;
       case 'SalahStandUp':
-        return <SalahStandUp />;
+        return <SalahStandUp showEnglish={translate} />;
       default:
         return null;
     }
+  }
+
+  const handleTranslate = () => {
+    setTranslate(!translate);
+    console.log(translate);
   }
 
   function handleClick(e) {
@@ -93,8 +99,8 @@ function RakatOne({ getImage }) {
             );
           })}
         </ul>
-        <div className={`steps-description__container--${prayer}`}>
-          <Translate prayer={prayer}/>
+        <div className={`steps-description__container--${prayer}`}> {/* prayer prop for light/dark class */}
+          <Translate prayer={prayer} handleTranslate={handleTranslate} translate={translate}/>
           {renderComponent()}
         </div>
       </div>

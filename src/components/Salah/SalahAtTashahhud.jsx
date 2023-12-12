@@ -1,6 +1,7 @@
 import React from "react";
 
-function SalahAtTashahhud() {
+function SalahAtTashahhud({ showEnglish }) {
+  {if(!showEnglish) {
   return (
     <div className="steps-description js-description">
       <h3 className="steps-description__title">Takbir</h3>
@@ -32,6 +33,39 @@ function SalahAtTashahhud() {
       </ol>
     </div>
   );
+  } else {
+    return (
+      <div className="steps-description js-description">
+        <h3 className="steps-description__title">Takbir</h3>
+        <ol className="steps-description__body">
+          <li className="steps-description__item">
+            Sit upright and recite:
+          </li>
+          <li className="steps-description__item">
+            <strong>All prayer is for Allah</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>and worship and goodness.</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>Peace be upon you, O Prophet</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>and the mercy of Allah and His blessings.</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>Peace be upon us, and on the righteous servants of Allah.</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>I bear witness that there is no god but Allah</strong>
+          </li>
+          <li className="steps-description__item">
+            <strong>and I bear witness that Muhammad is His servant and messenger.</strong>
+          </li>
+        </ol>
+      </div>
+    );
+  }}
 }
 
 export default SalahAtTashahhud;

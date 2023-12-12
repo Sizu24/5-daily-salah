@@ -44,6 +44,7 @@ function RakatThree({ lastRakat, getImage, stand }) {
   const [activeButton, setActiveButton] = useState(stepsList[0].name);
 
   const [steps, setSteps] = useState(stepsList);
+  const [translate, setTranslate] = useState(false);
 
   function renderComponent() {
     if (activeComponent === 'SalahStandUp' && stand === false) {
@@ -51,25 +52,25 @@ function RakatThree({ lastRakat, getImage, stand }) {
     } else {
       switch(activeComponent) {
         case 'SalahAlFatiha':
-          return <SalahAlFatiha />;
+          return <SalahAlFatiha showEnglish={translate} />;
         case 'SalahRuku':
-          return <SalahRuku />;
+          return <SalahRuku showEnglish={translate} />;
         case 'SalahStand':
-          return <SalahStand />;
+          return <SalahStand showEnglish={translate} />;
         case 'SalahSujud':
-          return <SalahSujud />;
+          return <SalahSujud showEnglish={translate} />;
         case 'SalahQuood':
-          return <SalahQuood />;
+          return <SalahQuood showEnglish={translate} />;
         case 'SalahStandUp':
-          return <SalahStandUp />;
+          return <SalahStandUp showEnglish={translate} />;
         case 'SalahAtTashahuud':
-          return <SalahAtTashahhud />;
+          return <SalahAtTashahhud showEnglish={translate} />;
         case 'SalahAsSalahAlanNabiyy':
-          return <SalahAsSalahAlanNabiyy />;
+          return <SalahAsSalahAlanNabiyy showEnglish={translate} />;
         case 'SalahDua':
-          return <SalahDua />;
+          return <SalahDua showEnglish={translate} />;
         case 'SalahEnd':
-          return <SalahEnd />;
+          return <SalahEnd showEnglish={translate} />;
         default:
           return null;
       }
@@ -89,6 +90,10 @@ function RakatThree({ lastRakat, getImage, stand }) {
     }
   }
 
+  const handleTranslate = () => {
+    setTranslate(!translate);
+    console.log(translate);
+  }
 
   function handleClick(e) {
     const value = e.target.textContent;
@@ -114,7 +119,7 @@ function RakatThree({ lastRakat, getImage, stand }) {
             )
           )}
         </ul>
-        <Translate prayer={prayer}/>
+        <Translate prayer={prayer} handleTranslate={handleTranslate} translate={translate} />
         <div className={`steps-description__container--${prayer}`}>
           {renderComponent()}
         </div>
