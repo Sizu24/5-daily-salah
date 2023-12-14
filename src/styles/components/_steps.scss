@@ -27,7 +27,7 @@
 
   @include size($xl) {
     flex-direction: column;
-    overflow: auto;
+    overflow: inherit;
     gap: 0;
   }  
 }
