@@ -15,7 +15,7 @@ function BasicsWudu() {
         mind.
       </p>
       <p className="section-text__body">
-        See the <a href="" className="section-text__link">Wudu section</a> to learn how to perform Wudu before prayer.
+        See the <a href="#wudu" smooth={true} className="section-text__link">Wudu section</a> to learn how to perform Wudu before prayer.
       </p>
     </div>
   );
