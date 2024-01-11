@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-scroll";
 
 function Footer() {
+  const date = new Date();
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -17,7 +18,7 @@ function Footer() {
         <div className="footer-column"></div>
       </div>
       <div className="footer-legal">
-        <p>©2023 Shah Chisty</p>
+        <p>©{date.getFullYear()} 5 Daily Salah</p>
       </div>
     </footer>
   );

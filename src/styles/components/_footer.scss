@@ -3,7 +3,11 @@
 }
 
 .footer-container {
-  padding: rem(80px);
+  padding: rem(80px 0 80px 20px);
+
+  @include size($md) {
+    padding: rem(80px);
+  }
 }
 
 .footer-column {
@@ -28,7 +32,11 @@
 }
 
 .footer-legal {
-  padding: rem(25px 80px);
+  padding: rem(25px 0 25px 20px);
   font-family: $ff-main;
   color: $beige;
+
+  @include size($md) {
+    padding: rem(25px 80px);
+  }
 }
