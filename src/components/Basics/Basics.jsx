@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import BasicsIntro from "./BasicsIntro";
 import BasicsPreparing from "./BasicsPreparing";
 import BasicsRakat from "./BasicsRakat";
 import BasicsWudu from "./BasicsWudu";
@@ -11,6 +12,7 @@ import wuduImage from "../../images/wudu-image1.jpg";
 function Basics() {
 
   const categories = [
+    {name: 'Introduction', component: 'BasicsIntro'},
     {name: 'Preparing for Salah', component: 'BasicsPreparing'},
     {name: 'What is Wudu', component: 'BasicsWudu'},
     {name: 'What is a Rakat', component: 'BasicsRakat'},
@@ -18,7 +20,7 @@ function Basics() {
     {name: 'What is Dua', component: 'BasicsDua'},
   ];
 
-  const [activeComponent, setActiveComponent] = useState('BasicsPreparing');
+  const [activeComponent, setActiveComponent] = useState('BasicsIntro');
   const [activeButton, setActiveButton] = useState(categories[0].name);
 
   function handleClick(e) {
@@ -31,6 +33,8 @@ function Basics() {
 
   const renderComponent = () => {
     switch (activeComponent) {
+      case 'BasicsIntro':
+        return <BasicsIntro />;
       case 'BasicsPreparing':
         return <BasicsPreparing />;
       case 'BasicsWudu':
