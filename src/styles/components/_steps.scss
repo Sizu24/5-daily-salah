@@ -1,12 +1,13 @@
 .steps {
   display: flex;
   flex-direction: column;
-  gap: rem(50px);
+  gap: rem(20px);
 
   @include size($xl) {
     position: absolute;
     left: 0;
     flex-direction: row;
+    gap: rem(50px);
   }  
 }
 
