@@ -2,4 +2,5 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^5dailysalah.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.5dailysalah.com$
 RewriteCond %{REQUEST_URI} !dist/
+RewriteCond %{REQUEST_URI} !^/sitemap.xml$  # Exclude sitemap.xml from being rewritten
 RewriteRule (.*) /dist/$1 [L]
