@@ -90,7 +90,6 @@ function RakatTwo({ lastRakat, getImage, stand }) {
 
   const handleTranslate = () => {
     setTranslate(!translate);
-    console.log(translate);
   }
 
   function handleClick(e) {

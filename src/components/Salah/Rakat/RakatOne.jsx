@@ -72,7 +72,6 @@ function RakatOne({ getImage }) {
 
   const handleTranslate = () => {
     setTranslate(!translate);
-    console.log(translate);
   }
 
   function handleClick(e) {

@@ -9,6 +9,7 @@ import Footer from "./layout/Footer";
 import Basics from "./components/Basics/Basics";
 
 import { ThemeProvider } from "./components/Salah/ThemeContext";
+console.log("Bismillahir rahmanir rahim");
 
 function App() {
   return (
